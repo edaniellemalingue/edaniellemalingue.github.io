@@ -1,2 +1,2 @@
-# e.daniellemalingue.github.io
+# edaniellemalingue.github.io
 Personal Portfolio
