@@ -348,3 +348,126 @@
       flex-wrap: wrap;
     }
   }
+  body {
+    font-family: "Inter", Arial, sans-serif;
+  }
+  
+  .cursive-name {
+    font-family: "Great Vibes", cursive;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+  
+  .typewriter-heading {
+    min-height: 2.8em;
+  }
+  
+  .typing-cursor {
+    animation: blink 0.8s infinite;
+    font-weight: 300;
+  }
+  
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+  
+  .bento-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 230px;
+    gap: 14px;
+    padding: 0 24px 80px;
+  }
+  
+  .tile {
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #ddd;
+    transition:
+      transform 0.35s ease,
+      box-shadow 0.35s ease,
+      grid-column 0.35s ease,
+      grid-row 0.35s ease;
+    cursor: pointer;
+  }
+  
+  .tile:hover {
+    transform: scale(1.025);
+    z-index: 8;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+  }
+  
+  .tile::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(0,0,0,0.65),
+      rgba(0,0,0,0.15),
+      rgba(0,0,0,0)
+    );
+    opacity: 0.9;
+    transition: 0.3s ease;
+  }
+  
+  .tile:hover::after {
+    opacity: 1;
+  }
+  
+  .tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.95);
+    transition: transform 0.55s ease, filter 0.35s ease;
+  }
+  
+  .tile:hover img {
+    transform: scale(1.12);
+    filter: saturate(1.1) contrast(1.05);
+  }
+  
+  .tile span {
+    position: absolute;
+    left: 22px;
+    bottom: 20px;
+    z-index: 3;
+    color: white;
+    font-size: clamp(1.2rem, 2.4vw, 2.4rem);
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.45);
+    transition: transform 0.35s ease;
+  }
+  
+  .tile:hover span {
+    transform: translateY(-14px);
+  }
+  
+  .tile .tile-info {
+    position: absolute;
+    left: 22px;
+    right: 22px;
+    bottom: 20px;
+    z-index: 3;
+    color: white;
+    opacity: 0;
+    transform: translateY(18px);
+    transition: 0.35s ease;
+    font-size: 0.95rem;
+    max-width: 420px;
+  }
+  
+  .tile:hover .tile-info {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .tile:hover span {
+    bottom: 88px;
+  }
