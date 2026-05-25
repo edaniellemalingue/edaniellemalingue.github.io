@@ -1,7 +1,7 @@
 const typedStatement = document.getElementById("typedStatement");
 
 const statement =
-  "I blend design, technology, and business to solve real human problems.";
+  "I blend design, technology, and business to create human-centered solutions.";
 
 let charIndex = 0;
 
