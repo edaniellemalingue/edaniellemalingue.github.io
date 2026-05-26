@@ -33,3 +33,30 @@ window.addEventListener("scroll", () => {
     });
   
   });
+  const aboutTyped = document.getElementById("typedAbout");
+
+const aboutText = "Hi, I’m Eunice-Danielle.";
+
+let aboutIndex = 0;
+
+function typeAboutHeader() {
+
+  if (!aboutTyped) return;
+
+  if (aboutIndex < aboutText.length) {
+
+    aboutTyped.textContent += aboutText.charAt(aboutIndex);
+
+    aboutIndex++;
+
+    setTimeout(typeAboutHeader, 65);
+  }
+}
+
+window.addEventListener("load", () => {
+
+  setTimeout(() => {
+    typeAboutHeader();
+  }, 400);
+
+});

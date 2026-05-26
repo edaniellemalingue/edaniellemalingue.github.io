@@ -570,3 +570,26 @@
   .tile:hover span {
     bottom: 88px;
   }
+
+  .about-title {
+    font-size: clamp(4rem, 9vw, 8rem);
+    line-height: 0.9;
+    letter-spacing: -0.07em;
+    min-height: 2.2em;
+  }
+  
+  .typing-cursor {
+    animation: blinkCursor 0.8s infinite;
+    font-weight: 300;
+  }
+  
+  @keyframes blinkCursor {
+  
+    0%, 50% {
+      opacity: 1;
+    }
+  
+    51%, 100% {
+      opacity: 0;
+    }
+  }
