@@ -46,86 +46,185 @@
     font-weight: 800;
   }
   
-  .cloud {
+  body {
+    font-family: "Inter", sans-serif;
+    background:
+      linear-gradient(
+        to bottom,
+        #f7f7f5,
+        #efeee9
+      );
+    color: #111;
+    overflow-x: hidden;
+  }
+  
+  /* BACKGROUND */
+  
+  .city-background {
     position: fixed;
-    background: white;
-    border-radius: 999px;
-    opacity: 0.75;
-    z-index: -1;
-    transition: transform 0.1s linear;
+    inset: 0;
+    z-index: -10;
+    overflow: hidden;
   }
   
-  .cloud::before,
-  .cloud::after {
-    content: "";
+  /* GRID */
+  
+  .grid-overlay {
     position: absolute;
-    background: white;
-    border-radius: 50%;
+    inset: 0;
+  
+    background-image:
+      linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+  
+    background-size: 40px 40px;
+  
+    opacity: 0.5;
   }
   
-  .cloud-1 {
-    width: 230px;
-    height: 70px;
-    top: 120px;
-    left: 8%;
+  /* LIGHT BLOBS */
+  
+  .light {
+    position: absolute;
+    border-radius: 999px;
+    filter: blur(120px);
+    opacity: 0.4;
+    animation: floatLight 14s ease-in-out infinite;
   }
   
-  .cloud-1::before {
-    width: 90px;
-    height: 90px;
-    top: -40px;
-    left: 30px;
+  .light-1 {
+    width: 420px;
+    height: 420px;
+    background: rgba(255, 215, 120, 0.18);
+    top: 10%;
+    left: -5%;
   }
   
-  .cloud-1::after {
-    width: 120px;
-    height: 120px;
-    top: -60px;
-    right: 20px;
+  .light-2 {
+    width: 500px;
+    height: 500px;
+    background: rgba(110, 140, 255, 0.12);
+    top: 30%;
+    right: -10%;
   }
   
-  .cloud-2 {
-    width: 320px;
-    height: 90px;
-    top: 300px;
-    right: 10%;
+  .light-3 {
+    width: 380px;
+    height: 380px;
+    background: rgba(255, 120, 160, 0.08);
+    bottom: 0%;
+    left: 30%;
   }
   
-  .cloud-2::before {
-    width: 120px;
-    height: 120px;
-    top: -60px;
-    left: 40px;
+  /* SKYLINE */
+  
+  .skyline {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background-repeat: repeat-x;
+    opacity: 0.08;
   }
   
-  .cloud-2::after {
-    width: 140px;
-    height: 140px;
-    top: -70px;
-    right: 40px;
+  .skyline-back {
+    bottom: 0;
+    height: 260px;
+  
+    background-image:
+      linear-gradient(
+        to top,
+        rgba(0,0,0,0.08),
+        transparent
+      );
+  
+    clip-path: polygon(
+      0% 100%,
+      0% 40%,
+      5% 38%,
+      5% 60%,
+      10% 60%,
+      10% 20%,
+      15% 20%,
+      15% 50%,
+      20% 50%,
+      20% 30%,
+      28% 30%,
+      28% 75%,
+      34% 75%,
+      34% 45%,
+      40% 45%,
+      40% 15%,
+      48% 15%,
+      48% 55%,
+      54% 55%,
+      54% 25%,
+      62% 25%,
+      62% 70%,
+      70% 70%,
+      70% 35%,
+      78% 35%,
+      78% 58%,
+      86% 58%,
+      86% 18%,
+      94% 18%,
+      94% 100%
+    );
   }
   
-  .cloud-3 {
-    width: 180px;
-    height: 60px;
-    top: 520px;
-    left: 42%;
+  .skyline-front {
+    bottom: 0;
+    height: 180px;
+  
+    background:
+      linear-gradient(
+        to top,
+        rgba(0,0,0,0.12),
+        transparent
+      );
+  
+    opacity: 0.12;
+  
+    clip-path: polygon(
+      0% 100%,
+      0% 65%,
+      8% 65%,
+      8% 30%,
+      15% 30%,
+      15% 55%,
+      22% 55%,
+      22% 25%,
+      32% 25%,
+      32% 80%,
+      42% 80%,
+      42% 40%,
+      52% 40%,
+      52% 18%,
+      64% 18%,
+      64% 60%,
+      76% 60%,
+      76% 30%,
+      88% 30%,
+      88% 50%,
+      100% 50%,
+      100% 100%
+    );
   }
   
-  .cloud-3::before {
-    width: 80px;
-    height: 80px;
-    top: -35px;
-    left: 25px;
-  }
+  /* FLOATING LIGHT MOTION */
   
-  .cloud-3::after {
-    width: 95px;
-    height: 95px;
-    top: -45px;
-    right: 25px;
-  }
+  @keyframes floatLight {
+    0% {
+      transform: translateY(0px) translateX(0px);
+    }
   
+    50% {
+      transform: translateY(-30px) translateX(20px);
+    }
+  
+    100% {
+      transform: translateY(0px) translateX(0px);
+    }
+  }
   .home-hero {
     min-height: 72vh;
     display: flex;
