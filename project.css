@@ -1,0 +1,311 @@
+/* ── PROJECT PAGE STYLES ── */
+
+.back-link {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 48px;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.back-link:hover {
+  opacity: 1;
+}
+
+/* HERO */
+
+.project-hero {
+  padding: 60px 8vw 80px;
+}
+
+.project-hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-hero-content {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.project-logo-wrap {
+  background: #111;
+  border-radius: 32px;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+}
+
+.project-logo-svg {
+  width: 100%;
+  height: auto;
+  filter: invert(1);
+}
+
+.project-eyebrow {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brown);
+  margin-bottom: 12px;
+}
+
+.project-title {
+  font-size: clamp(4rem, 8vw, 7rem);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+  margin-bottom: 24px;
+}
+
+.project-tagline {
+  font-size: 1.2rem;
+  max-width: 540px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  opacity: 0.8;
+}
+
+.project-meta-row {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.project-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.meta-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.45;
+}
+
+.meta-value {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+/* SECTIONS */
+
+.project-section {
+  padding: 80px 8vw;
+}
+
+.project-section--dark {
+  background: #111;
+  color: #fff;
+}
+
+.project-section--tint {
+  background: rgba(127, 156, 120, 0.08);
+}
+
+.project-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.project-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 12px;
+}
+
+.project-section--dark .section-label {
+  color: #7fc97a;
+}
+
+.section-heading {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 24px;
+}
+
+.section-body {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 780px;
+  opacity: 0.8;
+  margin-bottom: 16px;
+}
+
+.project-section--dark .section-body {
+  opacity: 0.75;
+}
+
+/* BUNNY GALLERY */
+
+.bunny-gallery {
+  display: flex;
+  gap: 24px;
+  margin-top: 48px;
+  flex-wrap: wrap;
+}
+
+.bunny-card {
+  flex: 1 1 160px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 28px 20px 20px;
+  text-align: center;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.bunny-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.bunny-card img {
+  width: 100%;
+  max-width: 140px;
+  height: 160px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.bunny-card p {
+  font-size: 0.85rem;
+  font-weight: 700;
+  opacity: 0.6;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* TAG CLOUD */
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.tag {
+  background: white;
+  border: 1.5px solid var(--text);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+/* STACK LIST */
+
+.stack-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.stack-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  gap: 16px;
+}
+
+.stack-name {
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.stack-desc {
+  font-size: 0.85rem;
+  opacity: 0.5;
+  text-align: right;
+}
+
+/* FEATURES GRID */
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.feature-card {
+  background: white;
+  border-radius: 20px;
+  padding: 32px 28px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+}
+
+.feature-icon {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.feature-card h3 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.7;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 860px) {
+  .project-hero-content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .project-logo-wrap {
+    max-width: 200px;
+  }
+
+  .project-two-col {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bunny-gallery {
+    gap: 16px;
+  }
+
+  .bunny-card {
+    flex: 1 1 130px;
+  }
+}
