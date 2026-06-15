@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  REUSABLE CASE STUDY TEMPLATE
+  ============================================================
+  How to use:
+    1. Copy this file and rename it to your project, e.g. "cubos.html".
+    2. Find–replace the {{PLACEHOLDERS}} below with your content.
+    3. Drop your images in /images and update the src paths.
+    4. Delete any sections you don't need; duplicate cards/screens as needed.
+    5. In index.html, point the project tile's href to your new file.
+
+  Recruiter-focused structure (keep these — they're what gets you hired):
+    HERO        → who/what/your role at a glance
+    OVERVIEW    → the PROBLEM, who it's for, the context
+    PROCESS     → how you THINK: research → decisions → tradeoffs
+    SKILLS/STACK→ proof of range (design + tech + business)
+    FEATURES    → what you actually built
+    GALLERY     → visual evidence (screens / photos)
+    IMPACT      → OUTCOME & results (metrics if you have them) ← most overlooked
+  ============================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{PROJECT NAME}} — Eunice-Danielle Malingue</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="project.css" />
+</head>
+<body>
+
+  <div class="city-background">
+    <div class="grid-overlay"></div>
+    <div class="light light-1"></div>
+    <div class="light light-2"></div>
+    <div class="light light-3"></div>
+    <div class="skyline skyline-back"></div>
+    <div class="skyline skyline-front"></div>
+  </div>
+
+  <nav>
+    <a href="index.html" class="logo cursive-name">Eunice-Danielle</a>
+    <div>
+      <a href="index.html">Work</a>
+      <a href="about.html">About</a>
+      <a href="braindump.html">Brain Dump</a>
+    </div>
+  </nav>
+
+  <!-- HERO — who / what / your role at a glance -->
+  <section class="project-hero">
+    <div class="project-hero-inner">
+      <a href="index.html" class="back-link">← Back to Work</a>
+      <div class="project-hero-content">
+        <div class="project-logo-wrap">
+          <!-- Optional: a logo/mark. Remove this wrap if you don't have one. -->
+          <img src="images/{{LOGO}}.svg" alt="{{PROJECT NAME}} logo" class="project-logo-svg" />
+        </div>
+        <div class="project-hero-text">
+          <p class="project-eyebrow">{{CATEGORY · SHORT DESCRIPTOR}}</p>
+          <h1 class="project-title">{{PROJECT NAME}}</h1>
+          <p class="project-tagline">{{One sentence: what it is and who it helps.}}</p>
+          <div class="project-meta-row">
+            <div class="project-meta-item">
+              <span class="meta-label">Role</span>
+              <span class="meta-value">{{Your role(s)}}</span>
+            </div>
+            <div class="project-meta-item">
+              <span class="meta-label">Timeline</span>
+              <span class="meta-value">{{e.g. 2024 · 6 weeks}}</span>
+            </div>
+            <div class="project-meta-item">
+              <span class="meta-label">Status</span>
+              <span class="meta-value">{{e.g. Shipped · Prototype}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OVERVIEW — the problem, who it's for, the context -->
+  <section class="project-section">
+    <div class="project-container">
+      <div class="section-label">Overview</div>
+      <h2 class="section-heading">The problem</h2>
+      <p class="section-body">{{What was the challenge? Who was struggling with what, and why did it matter? Set the context before the solution.}}</p>
+      <p class="section-body">{{What was your goal going in? What did success look like?}}</p>
+    </div>
+  </section>
+
+  <!-- PROCESS — how you think: research → decisions → tradeoffs -->
+  <section class="project-section project-section--tint">
+    <div class="project-container">
+      <div class="section-label">Process</div>
+      <h2 class="section-heading">How I approached it</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🔍</div>
+          <h3>Research</h3>
+          <p>{{What did you learn about users / the market / the constraints? Cite an insight that shaped the work.}}</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">✏️</div>
+          <h3>Explore</h3>
+          <p>{{Directions you considered. Sketches, concepts, options on the table.}}</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚖️</div>
+          <h3>Decide</h3>
+          <p>{{A key decision and the tradeoff behind it. Why this path over the alternative?}}</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🚀</div>
+          <h3>Build & Ship</h3>
+          <p>{{How you brought it to life and got it in front of people.}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS & SOFTWARE — proof of range -->
+  <section class="project-section">
+    <div class="project-container project-two-col">
+      <div>
+        <div class="section-label">Skills</div>
+        <h2 class="section-heading">What went into this</h2>
+        <div class="tag-cloud">
+          <span class="tag">{{Skill}}</span>
+          <span class="tag">{{Skill}}</span>
+          <span class="tag">{{Skill}}</span>
+          <span class="tag">{{Skill}}</span>
+          <span class="tag">{{Skill}}</span>
+          <span class="tag">{{Skill}}</span>
+        </div>
+      </div>
+      <div>
+        <div class="section-label">Software & Stack</div>
+        <h2 class="section-heading">Built with</h2>
+        <div class="stack-list">
+          <div class="stack-item">
+            <span class="stack-name">{{Tool}}</span>
+            <span class="stack-desc">{{What it was used for}}</span>
+          </div>
+          <div class="stack-item">
+            <span class="stack-name">{{Tool}}</span>
+            <span class="stack-desc">{{What it was used for}}</span>
+          </div>
+          <div class="stack-item">
+            <span class="stack-name">{{Tool}}</span>
+            <span class="stack-desc">{{What it was used for}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES / HIGHLIGHTS — what you actually built -->
+  <section class="project-section project-section--tint">
+    <div class="project-container">
+      <div class="section-label">Highlights</div>
+      <h2 class="section-heading">{{What makes it work}}</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">{{🧠}}</div>
+          <h3>{{Feature}}</h3>
+          <p>{{What it does and why it matters to the user.}}</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">{{⏱}}</div>
+          <h3>{{Feature}}</h3>
+          <p>{{What it does and why it matters to the user.}}</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">{{⚡}}</div>
+          <h3>{{Feature}}</h3>
+          <p>{{What it does and why it matters to the user.}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY — visual evidence. Horizontal scroll of screens/photos. -->
+  <section class="project-section">
+    <div class="project-container">
+      <div class="section-label">Gallery</div>
+      <h2 class="section-heading">See it</h2>
+      <p class="section-body">{{One line introducing the visuals.}}</p>
+    </div>
+  </section>
+
+  <section class="screens-section">
+    <div class="screens-group-label">{{Group label}}</div>
+    <div class="screens-scroll">
+      <figure class="screen-item">
+        <img src="images/{{image-1}}.png" alt="{{describe the image}}" />
+        <figcaption>{{Caption — what we're looking at}}</figcaption>
+      </figure>
+      <figure class="screen-item">
+        <img src="images/{{image-2}}.png" alt="{{describe the image}}" />
+        <figcaption>{{Caption}}</figcaption>
+      </figure>
+      <figure class="screen-item">
+        <img src="images/{{image-3}}.png" alt="{{describe the image}}" />
+        <figcaption>{{Caption}}</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- IMPACT — the outcome. THIS is what most portfolios miss. -->
+  <section class="project-section project-section--dark">
+    <div class="project-container">
+      <div class="section-label">Impact</div>
+      <h2 class="section-heading">The outcome</h2>
+      <p class="section-body">{{What happened? Use numbers where you can — users, growth, conversion, time saved, awards, what shipped. If no metrics, describe the qualitative result and what you learned.}}</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">📈</div>
+          <h3>{{Metric / result}}</h3>
+          <p>{{Short context for the number.}}</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💡</div>
+          <h3>{{What I learned}}</h3>
+          <p>{{The biggest takeaway — what you'd carry into the next project.}}</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔭</div>
+          <h3>{{What's next}}</h3>
+          <p>{{Where it could go from here.}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <p>Open to product design, creative technology, strategy, and innovation opportunities.</p>
+    <a href="https://www.linkedin.com/in/eunice-danielle-malingue-08765b270" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="https://drive.google.com/file/d/1mttH-zySImz-pYqppAKTo8czIuEIWrp8/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

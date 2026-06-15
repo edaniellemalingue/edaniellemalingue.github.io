@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Eunice-Danielle Malingue</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=50" />
 </head>
 <body>
 
@@ -27,35 +27,99 @@
     <div>
       <a href="index.html">Work</a>
       <a href="about.html">About</a>
-      <a href="brain-dump.html">Brain Dump</a>
+      <a href="braindump.html">Brain Dump</a>
     </div>
   </nav>
 
   <header class="home-hero">
-    <p class="eyebrow">Design • Technology • Business</p>
+    <p class="eyebrow">Product Manager · Product Designer</p>
     <h1 class="typewriter-heading">
         <span id="typedStatement"></span><span class="typing-cursor">|</span>
       </h1>
-    <p>
-      Purposeful products, joyful systems, and human-centered experiences.
-    </p>
+
+    <p class="quick-facts">USC Iovine &amp; Young ’26 · Los Angeles (open to relocation) · Seeking full-time · U.S. work authorized</p>
+
+    <!-- TREASURE BOX — click to release artifacts, click again to put them back -->
+    <button class="treasure" id="treasure" aria-label="Open the treasure box">
+      <span class="chest">
+        <span class="chest-lid"></span>
+        <span class="chest-body"><span class="chest-lock"></span></span>
+      </span>
+      <span class="treasure-hint">Open me ✨</span>
+    </button>
   </header>
 
-  <section class="filters">
-    <button data-filter="all" class="active">All</button>
-    <button data-filter="tech">Technology</button>
-    <button data-filter="physical">Physical Product</button>
-    <button data-filter="strategy">Business Strategy</button>
-    <button data-filter="design">Design</button>
+  <!-- TOOLS — infinite scrolling logo marquee -->
+  <section class="tools">
+    <div class="tools-head">
+      <p class="eyebrow">What I build with</p>
+      <h2>Software &amp; Tools</h2>
+    </div>
+
+    <div class="marquee">
+      <div class="marquee-track">
+        <!-- Set 1 -->
+        <div class="tool"><img src="https://cdn.simpleicons.org/figma" alt="Figma"><span>Figma</span></div>
+        <div class="tool"><img src="images/canva.png" alt="Canva"><span>Canva</span></div>
+        <div class="tool"><img src="https://cdn.simpleicons.org/expo/000000" alt="Expo"><span>Expo</span></div>
+        <div class="tool"><img src="https://cdn.simpleicons.org/claude" alt="Claude Code"><span>Claude Code</span></div>
+        <div class="tool"><img src="https://cdn.simpleicons.org/react" alt="React Native"><span>React Native</span></div>
+        <div class="tool"><img src="https://cdn.simpleicons.org/typescript" alt="TypeScript"><span>TypeScript</span></div>
+        <div class="tool"><img src="https://cdn.simpleicons.org/html5" alt="HTML"><span>HTML</span></div>
+        <div class="tool"><img src="https://cdn.simpleicons.org/css" alt="CSS"><span>CSS</span></div>
+        <div class="tool"><img src="https://cdn.simpleicons.org/python" alt="Python"><span>Python</span></div>
+        <div class="tool"><img src="https://cdn.simpleicons.org/firebase" alt="Firebase"><span>Firebase</span></div>
+        <div class="tool"><img src="https://cdn.simpleicons.org/revenuecat" alt="RevenueCat"><span>RevenueCat</span></div>
+        <div class="tool"><img src="https://cdn.simpleicons.org/vercel/000000" alt="Vercel"><span>Vercel</span></div>
+        <a class="tool" href="https://github.com/DanielleMalingue" target="_blank" rel="noopener noreferrer"><img src="https://cdn.simpleicons.org/github/181717" alt="GitHub"><span>GitHub</span></a>
+        <div class="tool"><img src="https://cdn.simpleicons.org/googledocs" alt="Google Docs"><span>Google Docs</span></div>
+        <div class="tool"><img src="https://cdn.simpleicons.org/googlesheets" alt="Google Sheets"><span>Google Sheets</span></div>
+        <div class="tool"><img src="https://cdn.simpleicons.org/googledrive" alt="Google Drive"><span>Google Drive</span></div>
+        <div class="tool"><img src="https://cdn.simpleicons.org/googleanalytics" alt="Google Analytics"><span>Google Analytics</span></div>
+        <div class="tool"><img src="https://cdn.simpleicons.org/notion/000000" alt="Notion"><span>Notion</span></div>
+        <div class="tool"><img src="https://cdn.simpleicons.org/gmail" alt="Gmail"><span>Gmail</span></div>
+        <div class="tool"><img src="images/outlook.svg" alt="Microsoft Outlook"><span>Outlook</span></div>
+        <div class="tool"><img src="images/teams.svg" alt="Microsoft Teams"><span>Teams</span></div>
+        <div class="tool"><img src="images/word.svg" alt="Microsoft Word"><span>Word</span></div>
+        <div class="tool"><img src="images/excel.svg" alt="Microsoft Excel"><span>Excel</span></div>
+
+        <!-- Set 2 (duplicate for seamless loop) -->
+        <div class="tool" aria-hidden="true"><img src="https://cdn.simpleicons.org/figma" alt=""><span>Figma</span></div>
+        <div class="tool" aria-hidden="true"><img src="images/canva.png" alt=""><span>Canva</span></div>
+        <div class="tool" aria-hidden="true"><img src="https://cdn.simpleicons.org/expo/000000" alt=""><span>Expo</span></div>
+        <div class="tool" aria-hidden="true"><img src="https://cdn.simpleicons.org/claude" alt=""><span>Claude Code</span></div>
+        <div class="tool" aria-hidden="true"><img src="https://cdn.simpleicons.org/react" alt=""><span>React Native</span></div>
+        <div class="tool" aria-hidden="true"><img src="https://cdn.simpleicons.org/typescript" alt=""><span>TypeScript</span></div>
+        <div class="tool" aria-hidden="true"><img src="https://cdn.simpleicons.org/html5" alt=""><span>HTML</span></div>
+        <div class="tool" aria-hidden="true"><img src="https://cdn.simpleicons.org/css" alt=""><span>CSS</span></div>
+        <div class="tool" aria-hidden="true"><img src="https://cdn.simpleicons.org/python" alt=""><span>Python</span></div>
+        <div class="tool" aria-hidden="true"><img src="https://cdn.simpleicons.org/firebase" alt=""><span>Firebase</span></div>
+        <div class="tool" aria-hidden="true"><img src="https://cdn.simpleicons.org/revenuecat" alt=""><span>RevenueCat</span></div>
+        <div class="tool" aria-hidden="true"><img src="https://cdn.simpleicons.org/vercel/000000" alt=""><span>Vercel</span></div>
+        <a class="tool" aria-hidden="true" tabindex="-1" href="https://github.com/DanielleMalingue" target="_blank" rel="noopener noreferrer"><img src="https://cdn.simpleicons.org/github/181717" alt=""><span>GitHub</span></a>
+        <div class="tool" aria-hidden="true"><img src="https://cdn.simpleicons.org/googledocs" alt=""><span>Google Docs</span></div>
+        <div class="tool" aria-hidden="true"><img src="https://cdn.simpleicons.org/googlesheets" alt=""><span>Google Sheets</span></div>
+        <div class="tool" aria-hidden="true"><img src="https://cdn.simpleicons.org/googledrive" alt=""><span>Google Drive</span></div>
+        <div class="tool" aria-hidden="true"><img src="https://cdn.simpleicons.org/googleanalytics" alt=""><span>Google Analytics</span></div>
+        <div class="tool" aria-hidden="true"><img src="https://cdn.simpleicons.org/notion/000000" alt=""><span>Notion</span></div>
+        <div class="tool" aria-hidden="true"><img src="https://cdn.simpleicons.org/gmail" alt=""><span>Gmail</span></div>
+        <div class="tool" aria-hidden="true"><img src="images/outlook.svg" alt=""><span>Outlook</span></div>
+        <div class="tool" aria-hidden="true"><img src="images/teams.svg" alt=""><span>Teams</span></div>
+        <div class="tool" aria-hidden="true"><img src="images/word.svg" alt=""><span>Word</span></div>
+        <div class="tool" aria-hidden="true"><img src="images/excel.svg" alt=""><span>Excel</span></div>
+      </div>
+    </div>
   </section>
 
   <main class="bento-grid">
 
-    <a class="tile large tech" href="addison.html">
-      <img src="images/addison.jpg" alt="Addison project">
-      <span>Addison</span>
+    <a class="tile large tech cover-logo" href="addison.html">
+      <img src="images/addison-a.png" alt="Addison">
+      <span class="cover-tag">AI Task Manager · iOS &amp; Android App</span>
     </a>
 
+    <!-- Toggle projects back on one at a time as each is finished. -->
+    <!--
     <a class="tile wide physical" href="#">
       <img src="images/cubos.jpg" alt="Cubos project">
       <span>Cubos</span>
@@ -105,15 +169,33 @@
       <img src="images/horoscopix.jpg" alt="Horoscopix">
       <span>Horoscopix</span>
     </a>
+    -->
 
   </main>
 
+  <!-- FLOATING SPOTIFY MINI-PLAYER -->
+  <div class="music-player" id="musicPlayer">
+    <button class="music-toggle" id="musicToggle" aria-expanded="false" aria-controls="musicBody">
+      <span class="music-note">♫</span>
+      <span class="music-label">Today's vibe</span>
+    </button>
+    <div class="music-body" id="musicBody" hidden>
+      <iframe
+        title="Don't Stop 'Til You Get Enough — Michael Jackson"
+        src="https://open.spotify.com/embed/track/46eu3SBuFCXWsPT39Yg3tJ?utm_source=generator"
+        width="100%" height="152" frameborder="0"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"></iframe>
+    </div>
+  </div>
+
   <footer id="contact">
     <p>Open to product design, creative technology, strategy, and innovation opportunities.</p>
-    <a href="https://www.linkedin.com/in/eunice-danielle-malingue-08765b270" target="_blank">LinkedIn</a>
-    <a href="Resume Link Here" target="_blank">Resume</a>
+    <a href="mailto:e.daniellemalingue@gmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/eunice-danielle-malingue-08765b270" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="https://drive.google.com/file/d/1mttH-zySImz-pYqppAKTo8czIuEIWrp8/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=50"></script>
 </body>
 </html>

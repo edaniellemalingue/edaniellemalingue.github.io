@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Addison — Eunice-Danielle Malingue</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="project.css" />
+  <title>Addison · Eunice-Danielle Malingue</title>
+  <link rel="stylesheet" href="style.css?v=49" />
+  <link rel="stylesheet" href="project.css?v=49" />
 </head>
 <body>
 
@@ -24,7 +24,7 @@
     <div>
       <a href="index.html">Work</a>
       <a href="about.html">About</a>
-      <a href="brain-dump.html">Brain Dump</a>
+      <a href="braindump.html">Brain Dump</a>
     </div>
   </nav>
 
@@ -33,17 +33,23 @@
     <div class="project-hero-inner">
       <a href="index.html" class="back-link">← Back to Work</a>
       <div class="project-hero-content">
-        <div class="project-logo-wrap">
-          <img src="images/addison-2.svg" alt="Addison logo" class="project-logo-svg" />
+        <div class="project-logo-wrap project-logo-wrap--light">
+          <img src="images/addison-a.png" alt="Addison app logo" class="project-logo-img" />
         </div>
         <div class="project-hero-text">
-          <p class="project-eyebrow">Mobile App · Cognitive Productivity</p>
-          <h1 class="project-title">Addison</h1>
-          <p class="project-tagline">An AI-powered task manager built around cognitive science — helping people with ADHD and executive function challenges actually get things done.</p>
+          <p class="project-eyebrow">AI Task Manager · iOS &amp; Android App</p>
+          <h1 class="project-title" style="color: #bf0000;">addison</h1>
+          <p class="project-tagline">An AI task manager grounded in cognitive science, built to help people with ADHD turn an overwhelming to-do list into one clear next move.</p>
+
+          <div class="project-cta-row">
+            <a class="project-cta project-cta--primary" href="https://myaddison.app" target="_blank" rel="noopener noreferrer">Open Addison ↗</a>
+            <a class="project-cta project-cta--secondary" href="https://apps.apple.com/us/app/addison-whats-your-next-move/id6751917243" target="_blank" rel="noopener noreferrer">Download on the App Store ↗</a>
+          </div>
+
           <div class="project-meta-row">
             <div class="project-meta-item">
               <span class="meta-label">Role</span>
-              <span class="meta-value">Founder · Designer · Developer</span>
+              <span class="meta-value">Founder · Product Lead</span>
             </div>
             <div class="project-meta-item">
               <span class="meta-label">Platform</span>
@@ -51,7 +57,7 @@
             </div>
             <div class="project-meta-item">
               <span class="meta-label">Status</span>
-              <span class="meta-value">App Store Submission</span>
+              <span class="meta-value">Live on the App Store</span>
             </div>
           </div>
         </div>
@@ -59,221 +65,180 @@
     </div>
   </section>
 
-  <!-- OVERVIEW -->
+  <!-- THE PROBLEM -->
   <section class="project-section">
     <div class="project-container">
-      <div class="section-label">Overview</div>
-      <h2 class="section-heading">What is Addison?</h2>
-      <p class="section-body">Addison is a task management app that uses AI and cognitive science-based design to help users — especially those with ADHD or executive dysfunction — break overwhelming to-do lists into manageable, focused action. Instead of a static list, Addison surfaces one task at a time and uses AI to decompose complex tasks into step-by-step subtasks with time estimates.</p>
-      <p class="section-body">The app features multiple prioritization modes (Smart, Quick Wins, Deadline), a Focus Mode that runs a countdown timer on a single task, and daily nudges to keep momentum going.</p>
+      <div class="section-label">The Problem</div>
+      <h2 class="section-heading">To-do apps overwhelm the people who need them most.</h2>
+      <p class="section-body">For people with ADHD or executive-function challenges, a long static to-do list doesn't create progress. It creates paralysis. Every item competes for attention, and deciding where to start is the hardest part. I wanted to build something that <em>reduces</em> mental load instead of adding to it.</p>
     </div>
   </section>
 
-  <!-- BUNNY GALLERY -->
-  <section class="project-section project-section--dark">
-    <div class="project-container">
-      <div class="section-label">Characters</div>
-      <h2 class="section-heading">Meet the Addison Bunny</h2>
-      <p class="section-body">The mascot of Addison — hand-drawn with ink — appears throughout the app to guide, celebrate, and encourage users. Each expression was designed to feel warm, approachable, and a little silly.</p>
-      <div class="bunny-gallery">
-        <div class="bunny-card">
-          <img src="images/bunnypointingforward.png" alt="Addison bunny pointing forward" />
-          <p>Let's go!</p>
-        </div>
-        <div class="bunny-card">
-          <img src="images/confettibunny.png" alt="Addison bunny resting" />
-          <p>Taking a breather</p>
-        </div>
-        <div class="bunny-card">
-          <img src="images/coolbunny.png" alt="Addison cool bunny with sunglasses" />
-          <p>Looking cool</p>
-        </div>
-        <div class="bunny-card">
-          <img src="images/bunnycelebrating.png" alt="Addison bunny celebrating" />
-          <p>Task complete!</p>
-        </div>
-        <div class="bunny-card">
-          <img src="images/bunnyclock.png" alt="Addison bunny with clock" />
-          <p>Focus mode</p>
-        </div>
+  <!-- WHAT IT IS -->
+  <section class="project-section project-section--tint">
+    <div class="project-container product-split">
+      <div>
+        <div class="section-label">The Product</div>
+        <h2 class="section-heading">One task. One next move.</h2>
+        <p class="section-body">Addison shows you one task at a time, uses AI to break big tasks into small timed steps, and surrounds you with focus tools and gentle nudges, so you always know your next move. The hand-drawn bunny mascot guides and celebrates you along the way.</p>
+      </div>
+      <div class="product-visual">
+        <img src="images/bunnycelebrating.png" alt="Addison bunny mascot celebrating" />
       </div>
     </div>
   </section>
 
-  <!-- SKILLS & SOFTWARE -->
+  <!-- SCREENSHOTS · App Store marketing set -->
+  <section class="screens-section">
+    <div class="screens-group-label">Inside the App</div>
+    <div class="screens-scroll">
+      <figure class="screen-item screen-item--marketing">
+        <img src="images/addison-dump.jpg" alt="Dump It Out · quick task capture" />
+      </figure>
+      <figure class="screen-item screen-item--marketing">
+        <img src="images/addison-breakdown.jpg" alt="Break It Down · AI subtasks" />
+      </figure>
+      <figure class="screen-item screen-item--marketing">
+        <img src="images/addison-barriers.jpg" alt="Remove Barriers · task details" />
+      </figure>
+      <figure class="screen-item screen-item--marketing">
+        <img src="images/addison-prioritize.jpg" alt="Fast Prioritization · switch modes" />
+      </figure>
+      <figure class="screen-item screen-item--marketing">
+        <img src="images/addison-onetask.jpg" alt="One Task · your next move" />
+      </figure>
+      <figure class="screen-item screen-item--marketing">
+        <img src="images/addison-block.jpg" alt="Block Distractions · Focus Mode" />
+      </figure>
+      <figure class="screen-item screen-item--marketing">
+        <img src="images/addison-stats.jpg" alt="Know Your Stats · progress" />
+      </figure>
+    </div>
+  </section>
+
+  <!-- KEY DECISION -->
   <section class="project-section">
-    <div class="project-container project-two-col">
-      <div>
-        <div class="section-label">Skills</div>
-        <h2 class="section-heading">What went into this</h2>
-        <div class="tag-cloud">
-          <span class="tag">Product Design</span>
-          <span class="tag">UX Research</span>
-          <span class="tag">Mobile Development</span>
-          <span class="tag">AI Integration</span>
-          <span class="tag">Cognitive Science</span>
-          <span class="tag">Illustration</span>
-          <span class="tag">Brand Design</span>
-          <span class="tag">Full-Stack Dev</span>
-          <span class="tag">System Architecture</span>
-          <span class="tag">Subscription UX</span>
+    <div class="project-container">
+      <div class="section-label">Key Decision</div>
+      <h2 class="section-heading">Why Focus Mode fills the whole screen</h2>
+      <p class="section-body">The hardest moments for ADHD users aren't planning. They're starting a task and staying with it. This is where I made Addison's boldest product bet.</p>
+
+      <p class="decision-tip">↻ Hover or tap a card to flip it</p>
+      <div class="decision-grid">
+        <div class="flip-card" tabindex="0" role="button" aria-label="Flip to read the insight">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <span class="decision-step">Insight</span>
+              <span class="flip-hint">↻ Flip to read</span>
+            </div>
+            <div class="flip-card-back">
+              <p>From my own lived experience and interviews with 30+ people with ADHD, two blockers came up over and over: task initiation and sustained attention. The market-standard circular timer is quiet and easy to ignore. It doesn't create urgency or hold focus.</p>
+            </div>
+          </div>
         </div>
-      </div>
-      <div>
-        <div class="section-label">Software & Stack</div>
-        <h2 class="section-heading">Built with</h2>
-        <div class="stack-list">
-          <div class="stack-item">
-            <span class="stack-name">React Native</span>
-            <span class="stack-desc">Cross-platform mobile framework</span>
+        <div class="flip-card" tabindex="0" role="button" aria-label="Flip to read the decision">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <span class="decision-step">Decision</span>
+              <span class="flip-hint">↻ Flip to read</span>
+            </div>
+            <div class="flip-card-back">
+              <p>I designed Focus Mode around two deliberate calls. After a 3, 2, 1 countdown that forces initiation, the timer fills the entire screen instead of a small circle, so users race to finish before it fills. The distraction blocker then uses OS-level permissions to lock out tempting apps, overpowering willpower instead of relying on it.</p>
+            </div>
           </div>
-          <div class="stack-item">
-            <span class="stack-name">Expo</span>
-            <span class="stack-desc">Dev toolchain & EAS builds</span>
-          </div>
-          <div class="stack-item">
-            <span class="stack-name">Firebase</span>
-            <span class="stack-desc">Auth, Firestore real-time DB</span>
-          </div>
-          <div class="stack-item">
-            <span class="stack-name">Azure OpenAI</span>
-            <span class="stack-desc">AI task decomposition</span>
-          </div>
-          <div class="stack-item">
-            <span class="stack-name">RevenueCat</span>
-            <span class="stack-desc">Subscription management</span>
-          </div>
-          <div class="stack-item">
-            <span class="stack-name">Vercel</span>
-            <span class="stack-desc">Web deployment</span>
-          </div>
-          <div class="stack-item">
-            <span class="stack-name">Figma</span>
-            <span class="stack-desc">UI design & prototyping</span>
-          </div>
-          <div class="stack-item">
-            <span class="stack-name">TypeScript</span>
-            <span class="stack-desc">Type-safe components & hooks</span>
+        </div>
+        <div class="flip-card" tabindex="0" role="button" aria-label="Flip to read the tradeoff">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <span class="decision-step">Tradeoff</span>
+              <span class="flip-hint">↻ Flip to read</span>
+            </div>
+            <div class="flip-card-back">
+              <p>A full-screen takeover and OS-level permissions are aggressive. They add onboarding friction and claim the user's whole screen, unlike the lighter timers people expect. I bet that real behavior change was worth more than familiarity, and the interviews backed it up.</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
+  <!-- SKILLS -->
   <section class="project-section project-section--tint">
     <div class="project-container">
-      <div class="section-label">Features</div>
-      <h2 class="section-heading">How Addison works</h2>
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">🧠</div>
-          <h3>AI Task Decomposition</h3>
-          <p>Drop in any task and Addison breaks it into timed subtasks using Azure OpenAI — with importance levels and duration estimates.</p>
+      <div class="section-label">Skills</div>
+      <h2 class="section-heading">What I brought to it</h2>
+      <p class="section-body">As founder and product lead, I owned the vision and roadmap and managed a team across product, design, and engineering, pairing people skills with hands-on product craft.</p>
+
+      <div class="skills-cols skills-cols--3">
+        <div>
+          <div class="section-label">Soft PM Skills</div>
+          <div class="tag-cloud">
+            <span class="tag">Team Leadership</span>
+            <span class="tag">Stakeholder Communication</span>
+            <span class="tag">User Empathy</span>
+            <span class="tag">Cross-Functional Collaboration</span>
+            <span class="tag">Storytelling</span>
+            <span class="tag">Prioritization</span>
+            <span class="tag">Adaptability</span>
+          </div>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">⏱</div>
-          <h3>Focus Mode</h3>
-          <p>One task at a time with a countdown timer. Reduces decision fatigue and keeps attention where it matters.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">⚡</div>
-          <h3>Smart Prioritization</h3>
-          <p>Three modes — Smart (weighted score), Quick Wins (shortest first), Deadline — so users work the way their brain works today.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🔔</div>
-          <h3>Daily Nudges</h3>
-          <p>Scheduled push notifications for daily recaps and inactivity nudges to gently maintain momentum.</p>
+        <figure class="skills-team">
+          <img src="images/team.jpg?v=3" alt="The Addison team beside the bus-stop ad" />
+          <figcaption>The Addison team on launch day</figcaption>
+        </figure>
+        <div>
+          <div class="section-label">Hard PM Skills</div>
+          <div class="tag-cloud">
+            <span class="tag">Product Roadmapping</span>
+            <span class="tag">User Research</span>
+            <span class="tag">Data Analysis</span>
+            <span class="tag">Wireframing &amp; Prototyping</span>
+            <span class="tag">AI / LLM Integration</span>
+            <span class="tag">Technical Scoping</span>
+            <span class="tag">Agile &amp; Sprint Planning</span>
+            <span class="tag">A/B Testing</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SCREENSHOTS — grouped by flow -->
-  <section class="project-section">
+  <!-- OUTCOME -->
+  <section class="project-section project-section--dark">
     <div class="project-container">
-      <div class="section-label">App Screens</div>
-      <h2 class="section-heading">See it in action</h2>
-      <p class="section-body">Real screenshots from the live app — covering the full flow from task entry to focus to progress tracking.</p>
-    </div>
-  </section>
+      <div class="section-label">Outcome</div>
+      <h2 class="section-heading">From idea to the App Store</h2>
+      <p class="section-body">Addison is live on iOS and Android. We took it from a personal frustration to a published app, building it together across product, design, and engineering. It's proof of what a focused team can ship when it deeply understands the problem it's solving.</p>
 
-  <!-- GROUP 1: Home & Task Entry -->
-  <section class="screens-section">
-    <div class="screens-group-label">Home & Task List</div>
-    <div class="screens-scroll">
-      <figure class="screen-item">
-        <img src="images/addison-screen-home.png" alt="Addison home screen showing task list with 800 completed tasks" />
-        <figcaption>Task list with 800+ completed — Brain Dump style input at the bottom</figcaption>
-      </figure>
-      <figure class="screen-item">
-        <img src="images/addison-screen-task-details.png" alt="Task details screen with due date, priority, difficulty and duration" />
-        <figcaption>Task details — due date, priority, difficulty, and estimated duration</figcaption>
-      </figure>
-      <figure class="screen-item">
-        <img src="images/addison-screen-ai-success.png" alt="Success modal after AI generated 3 subtasks" />
-        <figcaption>AI generates subtasks instantly — with a confirmation toast</figcaption>
-      </figure>
-      <figure class="screen-item">
-        <img src="images/addison-screen-subtasks-list.png" alt="Subtasks list with routine groups" />
-        <figcaption>Subtask list with routine group tags and Start Timer CTA</figcaption>
-      </figure>
-      <figure class="screen-item">
-        <img src="images/addison-screen-subtasks-expanded.png" alt="Expanded subtask view showing AI-decomposed steps" />
-        <figcaption>Expanded subtasks — each with time estimate and importance level</figcaption>
-      </figure>
-    </div>
-  </section>
+      <div class="stat-row">
+        <div class="stat">
+          <span class="stat-num">4.9★</span>
+          <span class="stat-label">App Store rating</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">5,000+</span>
+          <span class="stat-label">tasks completed by users</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">30+</span>
+          <span class="stat-label">user interviews</span>
+        </div>
+      </div>
 
-  <!-- GROUP 2: Focus Mode -->
-  <section class="screens-section screens-section--dark">
-    <div class="screens-group-label">Now Mode & Focus</div>
-    <div class="screens-scroll">
-      <figure class="screen-item">
-        <img src="images/addison-screen-now-ready.png" alt="Now screen with Smart Mode active, Clean Room task ready to start" />
-        <figcaption>Now screen — Smart Mode surfaces the highest-priority task first</figcaption>
-      </figure>
-      <figure class="screen-item">
-        <img src="images/addison-screen-now-done.png" alt="Now screen with swipe-to-done gesture revealing green" />
-        <figcaption>Swipe left to mark done — satisfying green reveal</figcaption>
-      </figure>
-      <figure class="screen-item">
-        <img src="images/addison-screen-now-snooze.png" alt="Now screen with swipe-to-snooze gesture revealing orange" />
-        <figcaption>Swipe right to snooze — no guilt, just momentum</figcaption>
-      </figure>
-      <figure class="screen-item">
-        <img src="images/addison-screen-focus-active.png" alt="Focus Mode Active dark screen" />
-        <figcaption>Focus Mode Active — minimal, distraction-free working state</figcaption>
-      </figure>
-      <figure class="screen-item">
-        <img src="images/addison-screen-focus-shield.png" alt="Focus Shield screen for blocking apps during focus sessions" />
-        <figcaption>Focus Shield — block distracting apps during sessions via Screen Time</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- GROUP 3: Progress -->
-  <section class="screens-section">
-    <div class="screens-group-label">Progress & Insights</div>
-    <div class="screens-scroll screens-scroll--centered">
-      <figure class="screen-item">
-        <img src="images/addison-screen-progress-1.png" alt="Progress screen showing 801 total tasks completed, 19-day best streak" />
-        <figcaption>801 total tasks completed — streak, consistency, and daily recap</figcaption>
-      </figure>
-      <figure class="screen-item">
-        <img src="images/addison-screen-progress-2.png" alt="Detailed stats: 97% intent-to-action, 471 clarity tasks, procrastination score" />
-        <figcaption>Deep stats — Intent → Action rate, Clarity, Procrastination Score, Avoidance count</figcaption>
-      </figure>
+      <div class="project-cta-row">
+        <a class="project-cta project-cta--primary" href="https://myaddison.app" target="_blank" rel="noopener noreferrer">Try Addison ↗</a>
+        <a class="project-cta project-cta--secondary" href="https://apps.apple.com/us/app/addison-whats-your-next-move/id6751917243" target="_blank" rel="noopener noreferrer">Get it on the App Store ↗</a>
+      </div>
     </div>
   </section>
 
   <footer id="contact">
     <p>Open to product design, creative technology, strategy, and innovation opportunities.</p>
-    <a href="https://www.linkedin.com/in/eunice-danielle-malingue-08765b270" target="_blank">LinkedIn</a>
-    <a href="Resume Link Here" target="_blank">Resume</a>
+    <a href="mailto:e.daniellemalingue@gmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/eunice-danielle-malingue-08765b270" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="https://drive.google.com/file/d/1mttH-zySImz-pYqppAKTo8czIuEIWrp8/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=49"></script>
 </body>
 </html>
