@@ -5,7 +5,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | Eunice-Danielle</title>
-  <link rel="stylesheet" href="style.css?v=75" />
+  <link rel="stylesheet" href="style.css?v=88" />
 </head>
 <body>
 
@@ -17,13 +17,15 @@
     <div>
       <a href="index.html">Work</a>
       <a href="about.html">About</a>
-      <a href="braindump.html">Brain Dump</a>
+      <!-- <a href="braindump.html">Brain Dump</a> -->
     </div>
   </nav>
 
   <main class="about-page">
     <div class="about-image">
-      <img src="images/danielle-malingue.png" alt="Eunice-Danielle headshot">
+      <img src="images/danielle-malingue.png" alt="Eunice-Danielle headshot" class="about-photo is-active">
+      <img src="images/danielle-2.jpg" alt="Eunice-Danielle at the Mark Hutchins Boardroom" class="about-photo">
+      <img src="images/danielle-3.jpg" alt="Eunice-Danielle at USC graduation" class="about-photo">
     </div>
 
     <div class="about-copy">
@@ -39,10 +41,13 @@
         The work I'm most proud of starts with a real person struggling with something real, and ends with something that genuinely helps. I believe the best products make people feel seen.
       </p>
 
-      <blockquote class="about-pov">
-        <span class="pov-label">What I believe</span>
-        A live v1 teaches you more in a week than a perfect spec does in a month. So I ship, watch how real people actually use it, and fix in daylight.
-      </blockquote>
+      <div class="about-pov" id="aboutPov">
+        <button class="pov-toggle" id="povToggle" type="button" aria-expanded="false" aria-controls="povText">
+          <span class="pov-label">What I believe</span>
+          <span class="pov-caret" aria-hidden="true">+</span>
+        </button>
+        <div class="pov-reveal"><p class="pov-text" id="povText">A live v1 teaches you more in a week than a perfect spec does in a month. So I ship, watch how real people actually use it, and fix in daylight.</p></div>
+      </div>
 
       <div class="about-links">
         <a href="https://drive.google.com/file/d/1cE3ytdl_r3RcZOEmXyHLCXlK0U0dg6sn/view?usp=sharing" target="_blank"
@@ -62,6 +67,6 @@
     <a href="https://drive.google.com/file/d/1cE3ytdl_r3RcZOEmXyHLCXlK0U0dg6sn/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
   </footer>
 
-  <script src="script.js?v=75"></script>
+  <script src="script.js?v=88"></script>
 </body>
 </html>

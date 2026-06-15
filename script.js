@@ -114,11 +114,11 @@ if (treasure) {
      can see the effect — swap them for your USC stickers / pins. Drop the
      files in images/artifacts/ and list their paths here. */
   const artifactSources = [
-    "images/coolbunny.png",
     "images/bunnycelebrating.png",
-    "images/confettibunny.png",
     "images/bunnypointingforward.png",
-    "images/bunnyclock.png"
+    "images/cameroon-flag.webp",
+    "images/fight-on.gif",
+    "images/danielle-headphones.jpg"
   ];
 
   let isOpen = false;
@@ -133,16 +133,36 @@ if (treasure) {
     chest.classList.add("open");
     const o = chestOrigin();
 
+    // corner/margin zones so trinkets land clear of the centered hero text
+    const zones = [
+      { x: [0.04, 0.15], y: [0.14, 0.36] },
+      { x: [0.03, 0.13], y: [0.40, 0.58] },
+      { x: [0.04, 0.15], y: [0.60, 0.82] },
+      { x: [0.85, 0.96], y: [0.14, 0.36] },
+      { x: [0.87, 0.97], y: [0.40, 0.58] },
+      { x: [0.85, 0.96], y: [0.60, 0.82] },
+    ];
+    for (let z = zones.length - 1; z > 0; z--) {
+      const j = Math.floor(Math.random() * (z + 1));
+      [zones[z], zones[j]] = [zones[j], zones[z]];
+    }
+    const spotIn = (z) => ({
+      x: window.innerWidth * (z.x[0] + Math.random() * (z.x[1] - z.x[0])),
+      y: window.innerHeight * (z.y[0] + Math.random() * (z.y[1] - z.y[0])),
+    });
+
     artifactSources.forEach((src, i) => {
       const img = document.createElement("img");
       img.className = "artifact-img";
+      if (src.indexOf("headphones") !== -1) img.classList.add("artifact-photo");
       img.src = src;
       img.alt = "";
 
-      // a random resting spot across the screen, slightly tilted
-      const restX = window.innerWidth * (0.14 + Math.random() * 0.72);
-      const restY = window.innerHeight * (0.16 + Math.random() * 0.6);
-      const rot = Math.random() * 44 - 22;
+      // a resting spot in a margin zone, slightly tilted
+      const spot = spotIn(zones[i % zones.length]);
+      const restX = spot.x;
+      const restY = spot.y;
+      const rot = Math.random() * 30 - 15;
 
       // start at the chest
       img.style.left = o.x + "px";
@@ -162,6 +182,28 @@ if (treasure) {
 
       active.push(img);
     });
+
+    // a "coded with love" handwritten trinket flies out too
+    const note = document.createElement("div");
+    note.className = "artifact-img artifact-note";
+    note.textContent = "coded with love";
+    const nSpot = spotIn(zones[artifactSources.length % zones.length]);
+    const nRestX = Math.min(Math.max(nSpot.x, 100), window.innerWidth - 100);
+    const nRestY = nSpot.y;
+    const nRot = Math.random() * 20 - 10;
+    note.style.left = o.x + "px";
+    note.style.top = o.y + "px";
+    note.style.transitionDelay = artifactSources.length * 0.06 + "s";
+    document.body.appendChild(note);
+    const nDx = nRestX - o.x;
+    const nDy = nRestY - o.y;
+    requestAnimationFrame(() => {
+      note.style.opacity = "1";
+      note.style.transform =
+        "translate(calc(-50% + " + nDx + "px), calc(-50% + " + nDy + "px)) " +
+        "rotate(" + nRot + "deg) scale(1)";
+    });
+    active.push(note);
   }
 
   function closeChest() {
@@ -425,5 +467,28 @@ document.querySelectorAll(".flip-card").forEach((card) => {
   });
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && !modal.hidden) close();
+  });
+})();
+
+/* ---- ABOUT — cross-fade between headshots ---- */
+(function () {
+  const photos = document.querySelectorAll(".about-image .about-photo");
+  if (photos.length < 2) return;
+  let idx = 0;
+  setInterval(() => {
+    photos[idx].classList.remove("is-active");
+    idx = (idx + 1) % photos.length;
+    photos[idx].classList.add("is-active");
+  }, 3000);
+})();
+
+/* ---- ABOUT — click to reveal "What I believe" ---- */
+(function () {
+  const pov = document.getElementById("aboutPov");
+  const btn = document.getElementById("povToggle");
+  if (!pov || !btn) return;
+  btn.addEventListener("click", () => {
+    const open = pov.classList.toggle("open");
+    btn.setAttribute("aria-expanded", String(open));
   });
 })();
