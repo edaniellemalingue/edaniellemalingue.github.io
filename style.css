@@ -942,6 +942,24 @@
   .tile.cover-logo--fill { background: transparent; }
   .tile.cover-logo--fill img { object-fit: cover; padding: 0; }
 
+  /* navy-field variant — a portrait brand logo centered on its own
+     background colour so a landscape tile reads as a clean banner */
+  .tile.cover-logo--mccarthy { background: #0f181f; }
+  .tile.cover-logo--mccarthy img { object-fit: contain; padding: 0; }
+  .tile.cover-logo--mccarthy .cover-tag {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: max-content;
+    max-width: 90%;
+    color: #fff;
+    background: rgba(15, 24, 31, 0.82);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    padding: 7px 16px;
+    border-radius: 999px;
+  }
+
   /* drop the dark photo gradient; show a clear "what is this" caption */
   .tile.cover-logo::after { display: none; }
 
