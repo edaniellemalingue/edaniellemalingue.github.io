@@ -350,8 +350,8 @@ document.querySelectorAll(".flip-card").forEach((card) => {
   if (!lensBtns.length) return;
 
   const copy = {
-    builder: "I design and ship real products end to end — a published mobile app, an enterprise tool on Palantir, and physical objects I built by hand.",
-    designer: "I design human-centered products and research-backed experiences — from user research to interface to a finished, tangible thing.",
+    builder: "I'm a builder at heart. I'd rather make something real than just talk about it, so I prototype, ship, and keep improving until it works.",
+    designer: "I design human-centered products and research-backed experiences, taking them from user insight to interface to a finished, tangible thing.",
     pm: "I take products from an ambiguous problem to a shipped V1, working across design, engineering, and stakeholders to get there.",
   };
 
