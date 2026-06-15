@@ -5,7 +5,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Eunice-Danielle Malingue</title>
-  <link rel="stylesheet" href="style.css?v=63" />
+  <link rel="stylesheet" href="style.css?v=65" />
 </head>
 <body>
 
@@ -95,24 +95,35 @@
     </div>
   </section>
 
+  <!-- PICK YOUR LENS — reframes the framing + highlights relevant work -->
+  <div class="lens-wrap">
+    <div class="lens" role="group" aria-label="View my work as">
+      <span class="lens-label">See my work as a</span>
+      <button class="lens-btn" data-lens="builder">Builder</button>
+      <button class="lens-btn" data-lens="designer">Designer</button>
+      <button class="lens-btn" data-lens="pm">Product Manager</button>
+    </div>
+    <p class="lens-desc" id="lensDesc" aria-live="polite"></p>
+  </div>
+
   <main class="bento-grid">
 
-    <a class="tile large tech cover-logo" href="addison.html">
+    <a class="tile large tech cover-logo" href="addison.html" data-lens="builder designer pm">
       <img src="images/addison-a.png" alt="Addison">
       <span class="cover-tag">AI Task Manager · iOS &amp; Android App</span>
     </a>
 
-    <a class="tile feature-wide tech cover-logo" href="field-echo.html">
+    <a class="tile feature-wide tech cover-logo" href="field-echo.html" data-lens="builder pm">
       <img src="images/mccarthy-logo.jpg" alt="Field Echo — McCarthy Holdings × Palantir">
       <span class="cover-tag">Field Echo · Enterprise Product</span>
     </a>
 
-    <a class="tile feature-wide strategy cover-logo" href="thales.html">
+    <a class="tile feature-wide strategy cover-logo" href="thales.html" data-lens="designer pm">
       <img src="images/thales-logo.svg" alt="Thales">
       <span class="cover-tag">In-Flight Entertainment · Design Research</span>
     </a>
 
-    <a class="tile wide physical cover-logo cover-logo--fill" href="cubos.html">
+    <a class="tile wide physical cover-logo cover-logo--fill" href="cubos.html" data-lens="builder designer">
       <img src="images/cubos-logo.png" alt="Cubos · Collectible Display Furniture">
       <span class="cover-tag">Product Design · Physical Build</span>
     </a>
@@ -242,6 +253,6 @@
     <p class="footer-credit" style="margin-top:18px;font-size:0.8rem;opacity:0.55;">Designed &amp; coded from scratch by me — no templates.</p>
   </footer>
 
-  <script src="script.js?v=63"></script>
+  <script src="script.js?v=65"></script>
 </body>
 </html>

@@ -342,3 +342,39 @@ document.querySelectorAll(".flip-card").forEach((card) => {
     document.body.appendChild(s);
   });
 })();
+/* ---- PICK YOUR LENS — reframe hero + highlight matching work ---- */
+(function () {
+  const lensBtns = document.querySelectorAll(".lens-btn");
+  const lensDesc = document.getElementById("lensDesc");
+  const tiles = document.querySelectorAll(".bento-grid .tile");
+  if (!lensBtns.length) return;
+
+  const copy = {
+    builder: "I design and ship real products end to end — a published mobile app, an enterprise tool on Palantir, and physical objects I built by hand.",
+    designer: "I design human-centered products and research-backed experiences — from user research to interface to a finished, tangible thing.",
+    pm: "I take products from an ambiguous problem to a shipped V1, working across design, engineering, and stakeholders to get there.",
+  };
+
+  let active = null;
+
+  function setLens(lens) {
+    // clicking the active lens again clears it (back to "all")
+    if (active === lens) lens = null;
+    active = lens;
+
+    lensBtns.forEach((b) =>
+      b.classList.toggle("active", b.dataset.lens === lens)
+    );
+    lensDesc.textContent = lens ? copy[lens] : "";
+
+    tiles.forEach((t) => {
+      const matches =
+        !lens || (t.dataset.lens || "").split(" ").includes(lens);
+      t.classList.toggle("lens-dim", !matches);
+    });
+  }
+
+  lensBtns.forEach((b) =>
+    b.addEventListener("click", () => setLens(b.dataset.lens))
+  );
+})();

@@ -1318,3 +1318,80 @@
   .testimonial { padding: 56px 18px; }
   .testimonial-card { padding: 32px 22px; }
 }
+
+/* ============================================================
+   PICK YOUR LENS (home hero)
+   ============================================================ */
+.lens {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.lens-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  opacity: 0.5;
+  margin-right: 4px;
+}
+
+.lens-btn {
+  border: 1.5px solid rgba(0, 0, 0, 0.16);
+  background: #fff;
+  border-radius: 999px;
+  padding: 9px 18px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.lens-btn:hover {
+  border-color: var(--green);
+  transform: translateY(-1px);
+}
+
+.lens-btn.active {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+.lens-desc {
+  margin: 16px auto 0;
+  max-width: 620px;
+  min-height: 1.6em;
+  font-size: 1.02rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: rgba(38, 38, 38, 0.72);
+  transition: opacity 0.25s ease;
+}
+
+/* dim the tiles that don't match the chosen lens */
+.tile.lens-dim {
+  opacity: 0.3;
+  filter: saturate(0.45);
+}
+
+.tile {
+  transition: opacity 0.35s ease, filter 0.35s ease, transform 0.3s ease;
+}
+
+/* lens bar placed above the work grid */
+.lens-wrap {
+  text-align: center;
+  padding: 8px 24px 4px;
+}
+
+.lens-wrap .lens {
+  margin-top: 0;
+}
+
+.lens-wrap .lens-desc {
+  margin-bottom: 4px;
+}
