@@ -1564,3 +1564,6 @@
 }
 
 .modal-close:hover { color: #111; }
+
+/* cream-background logo tile (El Tigre Café sign blends into its own bg) */
+.tile.cover-logo--cream { background: #fefaef; }
