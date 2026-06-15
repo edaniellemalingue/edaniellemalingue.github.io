@@ -378,3 +378,52 @@ document.querySelectorAll(".flip-card").forEach((card) => {
     b.addEventListener("click", () => setLens(b.dataset.lens))
   );
 })();
+
+/* ---- HIRE-ME CTA — open/close the contact popup ---- */
+(function () {
+  const tile = document.getElementById("ctaTile");
+  const modal = document.getElementById("ctaModal");
+  const closeBtn = document.getElementById("ctaClose");
+  const heading = document.getElementById("ctaHeading");
+  if (!tile || !modal) return;
+
+  const headingText = heading ? heading.textContent.trim() : "";
+  let typeTimer = null;
+
+  function typeHeading() {
+    if (!heading) return;
+    clearTimeout(typeTimer);
+    let i = 0;
+    (function step() {
+      heading.innerHTML =
+        headingText.slice(0, i) +
+        (i < headingText.length ? '<span class="typing-cursor">|</span>' : "");
+      if (i < headingText.length) {
+        i++;
+        typeTimer = setTimeout(step, 38);
+      }
+    })();
+  }
+
+  function open() {
+    modal.hidden = false;
+    document.body.style.overflow = "hidden";
+    typeHeading();
+    closeBtn && closeBtn.focus();
+  }
+  function close() {
+    modal.hidden = true;
+    document.body.style.overflow = "";
+    clearTimeout(typeTimer);
+    tile.focus();
+  }
+
+  tile.addEventListener("click", open);
+  closeBtn && closeBtn.addEventListener("click", close);
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) close();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !modal.hidden) close();
+  });
+})();

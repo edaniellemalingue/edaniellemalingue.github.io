@@ -5,7 +5,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Eunice-Danielle Malingue</title>
-  <link rel="stylesheet" href="style.css?v=66" />
+  <link rel="stylesheet" href="style.css?v=72" />
 </head>
 <body>
 
@@ -23,7 +23,7 @@
       </div>
 
   <nav>
-    <a href="index.html" class="logo cursive-name">Eunice-Danielle</a>
+    <a href="index.html" class="logo cursive-name">Eunice-Danielle Malingue</a>
     <div>
       <a href="index.html">Work</a>
       <a href="about.html">About</a>
@@ -148,6 +148,15 @@
       <span class="cover-tag">Spanish-Learning Game · My Concept</span>
     </a>
 
+    <!-- HIRE-ME CTA — fills the open grid block, opens a contact popup -->
+    <button class="tile tile--cta tile--full" id="ctaTile" type="button" data-lens="builder designer pm" aria-haspopup="dialog">
+      <span class="cta-icon" aria-hidden="true">+</span>
+      <span class="cta-text">
+        <span class="cta-title">Let's work together</span>
+        <span class="cta-sub">Open to full-time roles. Tap to get in touch.</span>
+      </span>
+    </button>
+
     <!-- Toggle projects back on one at a time as each is finished. -->
     <!--
     <a class="tile wide strategy" href="#">
@@ -265,6 +274,21 @@
     </div>
   </div>
 
+  <!-- CONTACT POPUP -->
+  <div class="modal-overlay" id="ctaModal" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="ctaHeading">
+      <button class="modal-close" id="ctaClose" type="button" aria-label="Close">×</button>
+      <p class="eyebrow">Let's talk</p>
+      <h2 id="ctaHeading">I'm ready to help tackle more challenges.</h2>
+      <p class="modal-body">Reach me here.</p>
+      <div class="modal-actions">
+        <a class="modal-btn modal-btn--primary" href="https://www.linkedin.com/in/eunice-danielle-malingue-08765b270" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a class="modal-btn" href="mailto:e.daniellemalingue@gmail.com">Email</a>
+        <a class="modal-btn" href="https://drive.google.com/file/d/1cE3ytdl_r3RcZOEmXyHLCXlK0U0dg6sn/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume ↗</a>
+      </div>
+    </div>
+  </div>
+
   <footer id="contact">
     <p>Open to product design, creative technology, strategy, and innovation opportunities.</p>
     <a href="mailto:e.daniellemalingue@gmail.com">Email</a>
@@ -273,6 +297,6 @@
     <p class="footer-credit" style="margin-top:18px;font-size:0.8rem;opacity:0.55;">Designed &amp; coded from scratch by me. No templates.</p>
   </footer>
 
-  <script src="script.js?v=66"></script>
+  <script src="script.js?v=72"></script>
 </body>
 </html>

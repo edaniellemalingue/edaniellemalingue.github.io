@@ -332,7 +332,7 @@
     grid-row: span 2;
   }
   
-  .tile:not(.large):not(.wide):not(.tall) {
+  .tile:not(.large):not(.wide):not(.tall):not(.feature-wide):not(.tile--full) {
     grid-column: span 2;
   }
   
@@ -649,6 +649,7 @@
     font-size: clamp(4rem, 9vw, 8rem);
     line-height: 0.9;
     letter-spacing: -0.07em;
+    font-weight: 500;
     min-height: 2.2em;
   }
 
@@ -1395,3 +1396,171 @@
 .lens-wrap .lens-desc {
   margin-bottom: 4px;
 }
+
+/* ============================================================
+   HIRE-ME CTA TILE + CONTACT MODAL
+   ============================================================ */
+.tile.tile--cta {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  border: 2px dashed rgba(0, 0, 0, 0.2);
+  background: rgba(127, 156, 120, 0.06);
+  cursor: pointer;
+  font-family: inherit;
+  padding: 28px 24px;
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+/* full-width banner variant (spans the whole grid row) */
+.tile.tile--full {
+  grid-column: 1 / -1;
+}
+
+.tile.tile--cta::after { display: none; }
+
+.tile.tile--cta:hover {
+  background: rgba(127, 156, 120, 0.12);
+  border-color: var(--green);
+  transform: translateY(-2px);
+}
+
+/* reset the global ".tile span { position:absolute }" for CTA contents */
+.tile--cta span {
+  position: static;
+  left: auto;
+  bottom: auto;
+  text-shadow: none;
+  text-transform: none;
+  letter-spacing: normal;
+  color: inherit;
+}
+
+.tile--cta .cta-icon {
+  flex: 0 0 auto;
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--green);
+  border-radius: 999px;
+  font-size: 1.9rem;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--green);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.tile.tile--cta:hover .cta-icon { background: var(--green); color: #fff; }
+
+.tile--cta .cta-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 2px;
+}
+
+.tile--cta .cta-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1f1f1f;
+}
+
+.tile--cta .cta-sub {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #555;
+}
+
+/* modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(15, 18, 20, 0.55);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  animation: modalFade 0.25s ease;
+}
+
+.modal-overlay[hidden] { display: none; }
+
+@keyframes modalFade { from { opacity: 0; } to { opacity: 1; } }
+
+.modal-card {
+  position: relative;
+  max-width: 480px;
+  width: 100%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 44px clamp(28px, 5vw, 48px);
+  text-align: center;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+  animation: modalPop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes modalPop { from { transform: translateY(12px) scale(0.97); opacity: 0; } to { transform: none; opacity: 1; } }
+
+.modal-card .eyebrow { color: var(--green); }
+
+.modal-card h2 {
+  font-size: clamp(1.5rem, 3.2vw, 2.1rem);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
+  min-height: 3.75em;
+}
+
+.modal-card .modal-body {
+  font-size: 1.05rem;
+  opacity: 0.7;
+  margin-bottom: 28px;
+}
+
+.modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.modal-btn {
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: 1.5px solid rgba(0, 0, 0, 0.16);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.modal-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16); }
+
+.modal-btn--primary {
+  background: var(--green);
+  color: #fff;
+  border-color: var(--green);
+}
+
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #777;
+  transition: color 0.2s ease;
+}
+
+.modal-close:hover { color: #111; }

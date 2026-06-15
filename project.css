@@ -879,3 +879,27 @@
   .partner-lockup { gap: 18px; }
   .partner-lockup img { height: 24px; }
 }
+
+/* back / next project navigation row */
+.project-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.project-nav .back-link { margin-bottom: 0; }
+
+.next-link {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.next-link:hover { opacity: 1; transform: translateX(3px); }
