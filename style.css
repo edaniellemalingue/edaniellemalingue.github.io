@@ -1211,14 +1211,49 @@
 }
 
 .testimonial-card {
-  max-width: 880px;
+  max-width: 980px;
   width: 100%;
+  display: flex;
+  align-items: center;
+  gap: clamp(28px, 5vw, 56px);
   background: #ffffff;
+  border: 3px solid transparent;
   border-radius: 28px;
-  padding: 56px clamp(28px, 6vw, 72px);
-  text-align: center;
+  padding: clamp(32px, 5vw, 56px);
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.10);
-  position: relative;
+  text-align: left;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  background-image:
+    linear-gradient(#ffffff, #ffffff),
+    linear-gradient(120deg, #7f9c78, #c15f3c 35%, #4a6fa5 60%, #7f9c78);
+  background-size: auto, 250% auto;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  animation: nameGradient 6s linear infinite;
+  box-shadow: 0 30px 84px rgba(0, 0, 0, 0.16);
+  transform: translateY(-3px);
+}
+
+.testimonial-photo {
+  margin: 0;
+  flex: 0 0 auto;
+  width: clamp(180px, 26vw, 280px);
+}
+
+.testimonial-photo img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.18);
+}
+
+.testimonial-body {
+  flex: 1 1 auto;
 }
 
 .testimonial-card .eyebrow {
@@ -1226,8 +1261,8 @@
 }
 
 .testimonial-quote {
-  margin: 18px 0 32px;
-  font-size: clamp(1.5rem, 3vw, 2.3rem);
+  margin: 14px 0 26px;
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
   line-height: 1.4;
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -1238,31 +1273,48 @@
   content: "\201C";
   display: block;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 4rem;
-  line-height: 0.4;
+  font-size: 3.5rem;
+  line-height: 0.3;
   color: var(--green);
   opacity: 0.45;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .testimonial-name {
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
   font-weight: 800;
   font-size: 1.05rem;
   letter-spacing: 0.01em;
+  color: #1f1f1f;
+  transition: color 0.2s ease;
+}
+
+.testimonial-name:hover {
+  color: var(--green);
 }
 
 .testimonial-role {
   display: block;
-  margin: 8px auto 0;
-  max-width: 600px;
+  margin-top: 8px;
+  max-width: 560px;
   font-size: 0.88rem;
   font-weight: 600;
   line-height: 1.5;
   opacity: 0.55;
 }
 
+@media (max-width: 760px) {
+  .testimonial-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  .testimonial-photo { width: clamp(180px, 60vw, 240px); }
+  .testimonial-role { margin-inline: auto; }
+}
+
 @media (max-width: 600px) {
   .testimonial { padding: 56px 18px; }
-  .testimonial-card { padding: 40px 24px; }
+  .testimonial-card { padding: 32px 22px; }
 }
