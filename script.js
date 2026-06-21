@@ -227,72 +227,19 @@ if (treasure) {
       closeChest();
     }
   });
+
+  /* Clear the released artifacts as soon as the user scrolls so they
+     don't stay pinned to the viewport. */
+  window.addEventListener("scroll", () => {
+    if (isOpen) {
+      isOpen = false;
+      closeChest();
+    }
+  }, { passive: true });
 }
 
-/* TOOLS — hover tooltip showing proficiency.
-   EDIT THESE LEVELS — [label, dots out of 5]. They're starter guesses. */
-const proficiency = {
-  "Figma":         ["Advanced", 4],
-  "Canva":         ["Expert", 5],
-  "Expo":          ["Advanced", 4],
-  "Claude Code":   ["Advanced", 4],
-  "React Native":  ["Proficient", 3],
-  "TypeScript":    ["Proficient", 3],
-  "HTML":          ["Advanced", 4],
-  "CSS":           ["Advanced", 4],
-  "Python":        ["Proficient", 3],
-  "Firebase":      ["Proficient", 3],
-  "RevenueCat":    ["Familiar", 2],
-  "Vercel":        ["Proficient", 3],
-  "GitHub":        ["Advanced", 4],
-  "Google Docs":   ["Expert", 5],
-  "Google Sheets": ["Advanced", 4],
-  "Google Drive":  ["Expert", 5],
-  "Google Analytics": ["Proficient", 3],
-  "Notion":        ["Advanced", 4],
-  "Gmail":         ["Expert", 5],
-  "Outlook":       ["Advanced", 4],
-  "Teams":         ["Advanced", 4],
-  "Word":          ["Expert", 5],
-  "Excel":         ["Advanced", 4]
-};
-
-// one shared tooltip on <body> so it's never clipped by the marquee
-const profTip = document.createElement("div");
-profTip.className = "tool-prof";
-profTip.setAttribute("aria-hidden", "true");
-document.body.appendChild(profTip);
-
-function dotsHTML(score) {
-  let dots = "";
-  for (let i = 0; i < 5; i++) {
-    dots += '<i class="' + (i < score ? "on" : "") + '"></i>';
-  }
-  return dots;
-}
-
-document.querySelectorAll(".tool").forEach((tool) => {
-  const label = tool.querySelector("span");
-  if (!label) return;
-  const info = proficiency[label.textContent.trim()];
-  if (!info) return;
-
-  const [level, score] = info;
-
-  tool.addEventListener("mouseenter", () => {
-    profTip.innerHTML =
-      '<span class="tool-prof-level">' + level + "</span>" +
-      '<span class="tool-prof-dots">' + dotsHTML(score) + "</span>";
-    const r = tool.getBoundingClientRect();
-    profTip.style.left = r.left + r.width / 2 + "px";
-    profTip.style.top = r.top - 14 + "px";
-    profTip.classList.add("show");
-  });
-
-  tool.addEventListener("mouseleave", () => {
-    profTip.classList.remove("show");
-  });
-});
+/* TOOLS — proficiency levels are now rendered inline as visible dots on each
+   .tool-card in index.html (no hover tooltip needed). */
 
 /* FLOATING MUSIC PLAYER — toggle open/closed */
 const musicToggle = document.getElementById("musicToggle");
