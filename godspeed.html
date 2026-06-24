@@ -109,6 +109,41 @@
     </div>
   </section>
 
+  <!-- GALLERY -->
+  <section class="project-section">
+    <div class="project-container">
+      <div class="section-label">A Look Inside</div>
+      <h2 class="section-heading">The search, under one roof</h2>
+      <p class="section-body">A few of the screens that turn a scattered job hunt into a single workflow.</p>
+      <div class="final-gallery">
+        <figure>
+          <img src="images/godspeed/jobs.png" alt="Godspeed job feed showing live postings with draft cover letter and build resume actions" loading="lazy" />
+          <figcaption>The job feed: live postings from target companies, each with a one-click cover letter and resume.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/godspeed/clearance.png" alt="Clearance cover letter generator with company, role, and job description fields" loading="lazy" />
+          <figcaption>Clearance drafts a cover letter for any role, tailored from your profile.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/godspeed/resume-builder.png" alt="Resume builder with an experience bank and a tailored resume generator" loading="lazy" />
+          <figcaption>The resume builder: bank everything you've done, then spin up a tailored, titled resume.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/godspeed/skills-daily.png" alt="Skills board daily challenge with aptitude and product questions" loading="lazy" />
+          <figcaption>A skills board with a daily aptitude, product, and interview workout.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/godspeed/skills-wordle.png" alt="Skills board word game warm-up guessing a five-letter product term" loading="lazy" />
+          <figcaption>A daily warm-up to keep momentum between applications.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/godspeed/rejection-wall.png" alt="The rejection wall where rejection screenshots are posted with captions" loading="lazy" />
+          <figcaption>The rejection wall: every "unfortunately" reframed as proof you showed up.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <!-- HOW IT'S BUILT -->
   <section class="project-section">
     <div class="project-container project-two-col">
@@ -161,33 +196,17 @@
       <h2 class="section-heading">Godspeed is where a three-app system begins</h2>
       <p class="section-body">Godspeed is one of three apps I designed to talk to each other through a single private data contract. It owns the jobs. The city and salary behind a role you're chasing flow downstream to Provision, which uses them to gauge what you can afford, and onward to Prosper, which turns an offer into an income projection. Every cross-app call happens on the server and is authenticated with a shared secret, so nothing sensitive ever reaches the browser.</p>
 
-      <div class="dataflow">
-        <a class="dataflow-node is-current" href="godspeed.html">
-          <span class="df-name">Godspeed</span>
-          <span class="df-role">Where you'll work</span>
-          <span class="df-note">Produces a jobs feed with salary and location.</span>
-        </a>
-        <div class="dataflow-arrow">
-          <span class="df-label">city · salary</span>
-          <span class="df-line">→</span>
-        </div>
-        <a class="dataflow-node" href="provision.html">
-          <span class="df-name">Provision</span>
-          <span class="df-role">Where you'll live</span>
-          <span class="df-note">Reads jobs to gauge what's affordable.</span>
-        </a>
-        <div class="dataflow-arrow">
-          <span class="df-label">rent · deposit</span>
-          <span class="df-line">→</span>
-        </div>
-        <a class="dataflow-node" href="prosper.html">
-          <span class="df-name">Prosper</span>
-          <span class="df-role">Your money</span>
-          <span class="df-note">Reads both into income and cost projections.</span>
-        </a>
-      </div>
+      <figure class="deck-banner">
+        <img src="images/godspeed/architecture.png" alt="Architecture diagram: Godspeed jobs and offers feed into Provision apartments and into Prosper finances, with an offer-salary loop straight to Prosper, over shared service-key auth and read-only pulls" loading="lazy" />
+        <figcaption>The actual contract: data runs one direction, Godspeed to Provision to Prosper, with an offer-salary shortcut straight to Prosper. One shared key, read-only pulls, no loops or sync engine.</figcaption>
+      </figure>
 
-      <p class="section-body" style="margin-top:28px;">Designing the contract first, then building the producer here in Godspeed, is what let the other two apps consume it without ever touching this codebase. That separation, one direction of data and one shared secret, is the part I'm proudest of: it shows I can design a system, not just a screen.</p>
+      <p class="section-body" style="margin-top:36px;">Designing the contract first, then building the producer here in Godspeed, is what let the other two apps consume it without ever touching this codebase. That separation, one direction of data and one shared secret, is the part I'm proudest of: it shows I can design a system, not just a screen.</p>
+
+      <div class="project-cta-row">
+        <a class="project-cta project-cta--secondary" href="provision.html">See Provision →</a>
+        <a class="project-cta project-cta--secondary" href="prosper.html">See Prosper →</a>
+      </div>
     </div>
   </section>
 
