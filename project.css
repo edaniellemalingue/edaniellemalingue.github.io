@@ -988,3 +988,89 @@
   .dataflow-arrow { flex-direction: row; min-width: 0; gap: 8px; }
   .dataflow-arrow .df-line { transform: rotate(90deg); }
 }
+
+/* ============================================================
+   IMAGE + FEATURE PAIR CARDS — screenshot paired with its feature
+   so a recruiter reads the screen and a bold one-liner, not a caption
+   ============================================================ */
+.shot-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 26px;
+  margin-top: 40px;
+}
+
+.shot-card {
+  margin: 0;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.shot-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.16);
+}
+
+.shot-card > img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  background: #f4f4f2;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.shot-card figcaption { padding: 18px 22px 22px; }
+.shot-card figcaption h3 { font-size: 1.15rem; font-weight: 800; margin: 0 0 6px; }
+.shot-card figcaption p { font-size: 0.95rem; line-height: 1.5; opacity: 0.72; margin: 0; }
+
+/* compact strip for features that don't have a screenshot yet */
+.also-inside {
+  margin-top: 36px;
+  padding-top: 26px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.also-inside .also-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 14px;
+}
+
+.also-inside ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 28px;
+}
+
+.also-inside li {
+  font-size: 0.95rem;
+  opacity: 0.82;
+  padding-left: 18px;
+  position: relative;
+}
+
+.also-inside li::before {
+  content: "+";
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  font-weight: 800;
+}
+
+@media (max-width: 860px) {
+  .shot-grid,
+  .also-inside ul { grid-template-columns: 1fr; }
+}
