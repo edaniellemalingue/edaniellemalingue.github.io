@@ -1547,6 +1547,57 @@
 /* cream-background logo tile (El Tigre Café sign blends into its own bg) */
 .tile.cover-logo--cream { background: #fefaef; }
 
+  /* Text-wordmark tiles for the connected full-stack apps (no logo art).
+     A clean wordmark on a soft branded field, with a "connected suite" badge
+     so the three read as one system at a glance. */
+  .tile.cover-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 22px;
+    text-align: center;
+  }
+  .tile.cover-text::after { display: none; }
+  .tile.cover-text .ct-badge {
+    position: static;
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: rgba(0,0,0,0.06);
+    color: inherit;
+    opacity: 0.85;
+  }
+  .tile.cover-text .ct-wordmark {
+    position: static;
+    color: inherit;
+    font-size: clamp(1.7rem, 3vw, 2.5rem);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    text-transform: none;
+    text-shadow: none;
+    line-height: 1;
+  }
+  .tile.cover-text .cover-tag {
+    position: static;
+    color: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    opacity: 0.72;
+    max-width: 24ch;
+    margin: 0 auto;
+  }
+  .tile.cover-text:hover { transform: scale(1.025); }
+
+  /* one accent per app, drawn from the site palette */
+  .tile.cover-text--prosper   { background: #eef4ec; color: #3f6b3a; }
+  .tile.cover-text--godspeed  { background: #eaf0f8; color: #37557f; }
+  .tile.cover-text--provision { background: #f9efe8; color: #b04f2d; }
+
 /* handwritten "coded with love" note in the hero */
 .home-hero p.handwritten-note {
   font-family: "Great Vibes", cursive;

@@ -909,3 +909,82 @@
 }
 
 .next-link:hover { opacity: 1; transform: translateX(3px); }
+
+/* ============================================================
+   CROSS-APP DATA FLOW — shared section across the connected apps
+   ============================================================ */
+.dataflow {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.dataflow-node {
+  flex: 1 1 180px;
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 20px 22px;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  text-decoration: none;
+  color: var(--text);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.dataflow-node:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.1);
+}
+
+.dataflow-node .df-name { font-weight: 800; font-size: 1.15rem; }
+.dataflow-node .df-role { font-size: 0.82rem; opacity: 0.6; }
+.dataflow-node .df-note { font-size: 0.8rem; margin-top: 6px; opacity: 0.7; }
+
+.dataflow-node.is-current {
+  border-color: var(--green);
+  background: #f4f8f2;
+  box-shadow: 0 10px 26px rgba(127, 156, 120, 0.22);
+}
+
+.dataflow-arrow {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-width: 92px;
+}
+
+.dataflow-arrow .df-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.55;
+  text-align: center;
+}
+
+.dataflow-arrow .df-line { font-size: 1.4rem; opacity: 0.45; line-height: 1; }
+
+.project-section--dark .dataflow-node {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.16);
+  color: #fff;
+}
+.project-section--dark .dataflow-node.is-current {
+  background: rgba(127, 156, 120, 0.22);
+  border-color: var(--green);
+}
+.project-section--dark .dataflow-arrow .df-label,
+.project-section--dark .dataflow-arrow .df-line { color: #fff; }
+
+@media (max-width: 760px) {
+  .dataflow { flex-direction: column; }
+  .dataflow-arrow { flex-direction: row; min-width: 0; gap: 8px; }
+  .dataflow-arrow .df-line { transform: rotate(90deg); }
+}
