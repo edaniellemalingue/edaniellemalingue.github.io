@@ -21,11 +21,11 @@
   <meta property="og:url" content="https://edaniellemalingue.github.io/prosper.html" />
   <meta property="og:title" content="Prosper · Personal Finance Dashboard (Full-Stack AI) · Eunice-Danielle Malingue" />
   <meta property="og:description" content="A personal finance dashboard with connected accounts, net-worth and cash-flow tracking, and an AI tutor. Built by Eunice-Danielle Malingue." />
-  <meta property="og:image" content="https://edaniellemalingue.github.io/images/danielle-malingue.png" />
+  <meta property="og:image" content="https://edaniellemalingue.github.io/images/prosper/plaid-institutions.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Prosper · Personal Finance Dashboard (Full-Stack AI) · Eunice-Danielle Malingue" />
   <meta name="twitter:description" content="A personal finance dashboard with connected accounts, net-worth and cash-flow tracking, and an AI tutor. Built by Eunice-Danielle Malingue." />
-  <meta name="twitter:image" content="https://edaniellemalingue.github.io/images/danielle-malingue.png" />
+  <meta name="twitter:image" content="https://edaniellemalingue.github.io/images/prosper/plaid-institutions.png" />
   <link rel="stylesheet" href="style.css?v=109" />
   <link rel="stylesheet" href="project.css?v=91" />
 </head>
@@ -95,37 +95,45 @@
     <div class="project-container">
       <div class="section-label">What It Does</div>
       <h2 class="section-heading">From raw accounts to a real plan</h2>
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">🔗</div>
-          <h3>Connect everything</h3>
-          <p>Securely links real banks, cards, and loans, with manual entry for the accounts automated feeds can't reach. Balances refresh automatically on a daily schedule.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">📊</div>
-          <h3>One dashboard</h3>
-          <p>Net worth, total assets, total debt, and monthly cash flow at a glance, with trend charts for net worth, debt, and income versus spending.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🧾</div>
-          <h3>Spending &amp; goals</h3>
-          <p>A unified transaction feed, category breakdowns, and savings or debt-payoff goals that track against your real balances as they move.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🔮</div>
-          <h3>Planning &amp; projections</h3>
-          <p>Forward-looking projections and a manual planner to test decisions before you make them.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">✨</div>
-          <h3>Sparks, your AI tutor</h3>
-          <p>Bite-size financial-literacy lessons plus an AI tutor that answers your questions using your actual numbers, not generic advice.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🔒</div>
-          <h3>Private by design</h3>
-          <p>Every read is scoped to the signed-in user, and all sensitive connections stay on the server, never in the browser.</p>
-        </div>
+      <div class="shot-grid">
+        <figure class="shot-card">
+          <img src="images/prosper/plaid-institutions.png" alt="Prosper connecting a bank account through Plaid, with major banks to choose from" loading="lazy" />
+          <figcaption>
+            <h3>Connect real accounts</h3>
+            <p>Securely links banks, cards, and loans through Plaid, with manual entry for the rest.</p>
+          </figcaption>
+        </figure>
+        <figure class="shot-card">
+          <img src="images/prosper/loan-health.png" alt="Loan health view showing each debt as a colored orb with a debt payoff planner" loading="lazy" />
+          <figcaption>
+            <h3>See every debt clearly</h3>
+            <p>Each loan is a living orb, green when it's healthy and red when it needs attention, with a payoff planner.</p>
+          </figcaption>
+        </figure>
+        <figure class="shot-card">
+          <img src="images/prosper/planning-ahead.png" alt="Planning view running take-home pay against rent, pulling job and apartment data from the other apps" loading="lazy" />
+          <figcaption>
+            <h3>Plan a job offer and a move</h3>
+            <p>Run a salary and an apartment to see what's actually left, pulled live from the other two apps.</p>
+          </figcaption>
+        </figure>
+        <figure class="shot-card">
+          <img src="images/prosper/sparks.png" alt="Sparks, an AI money tutor with bite-size financial literacy lessons" loading="lazy" />
+          <figcaption>
+            <h3>Sparks, your AI money tutor</h3>
+            <p>Bite-size lessons plus a tutor that answers using your real numbers, not generic advice.</p>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="also-inside">
+        <span class="also-label">Also inside</span>
+        <ul>
+          <li><strong>Net worth, assets, debt &amp; cash flow</strong> at a glance, with trend charts</li>
+          <li><strong>Spending</strong> by category over a unified transaction feed</li>
+          <li><strong>Savings &amp; debt-payoff goals</strong> tracked against real balances</li>
+          <li><strong>Private by design</strong>: reads scoped to you, secrets stay server-side</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -182,33 +190,17 @@
       <h2 class="section-heading">Prosper is the last stop in a three-app system I built</h2>
       <p class="section-body">Prosper is one of three apps I designed to talk to each other through a single private data contract. Data flows one direction only. Prosper reads where you'll work from Godspeed and where you'll live from Provision, then folds both into your income and cost projections. Every cross-app call happens on the server and is authenticated with a shared secret, so nothing sensitive ever reaches the browser.</p>
 
-      <div class="dataflow">
-        <a class="dataflow-node" href="godspeed.html">
-          <span class="df-name">Godspeed</span>
-          <span class="df-role">Where you'll work</span>
-          <span class="df-note">Produces a jobs feed with salary and location.</span>
-        </a>
-        <div class="dataflow-arrow">
-          <span class="df-label">city · salary</span>
-          <span class="df-line">→</span>
-        </div>
-        <a class="dataflow-node" href="provision.html">
-          <span class="df-name">Provision</span>
-          <span class="df-role">Where you'll live</span>
-          <span class="df-note">Produces a listings feed with rent and deposits.</span>
-        </a>
-        <div class="dataflow-arrow">
-          <span class="df-label">rent · deposit</span>
-          <span class="df-line">→</span>
-        </div>
-        <a class="dataflow-node is-current" href="prosper.html">
-          <span class="df-name">Prosper</span>
-          <span class="df-role">Your money</span>
-          <span class="df-note">Reads both into income and cash-flow projections.</span>
-        </a>
-      </div>
+      <figure class="deck-banner">
+        <img src="images/godspeed/architecture.png" alt="Architecture diagram: Godspeed jobs and offers feed into Provision apartments and into Prosper finances, with an offer-salary loop straight to Prosper, over shared service-key auth and read-only pulls" loading="lazy" />
+        <figcaption>The actual contract: data runs one direction, Godspeed to Provision to Prosper, with an offer-salary shortcut straight to Prosper. One shared key, read-only pulls, no loops or sync engine.</figcaption>
+      </figure>
 
-      <p class="section-body" style="margin-top:28px;">A new salary in Godspeed becomes an income projection here. A signed lease in Provision becomes an upcoming cost in cash flow. The three apps turn a job search, a move, and a budget into one continuous story, which is the part I'm proudest of: it shows I can design a system, not just a screen.</p>
+      <p class="section-body" style="margin-top:36px;">A new salary in Godspeed becomes an income projection here. A signed lease in Provision becomes an upcoming cost in cash flow. The three apps turn a job search, a move, and a budget into one continuous story, which is the part I'm proudest of: it shows I can design a system, not just a screen.</p>
+
+      <div class="project-cta-row">
+        <a class="project-cta project-cta--secondary" href="godspeed.html">See Godspeed →</a>
+        <a class="project-cta project-cta--secondary" href="provision.html">See Provision →</a>
+      </div>
     </div>
   </section>
 
