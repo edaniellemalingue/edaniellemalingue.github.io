@@ -72,7 +72,7 @@
 
 .project-title {
   font-size: clamp(4rem, 8vw, 7rem);
-  font-weight: 900;
+  font-weight: 700;
   line-height: 0.9;
   letter-spacing: -0.06em;
   margin-bottom: 24px;
@@ -1073,4 +1073,258 @@
 @media (max-width: 860px) {
   .shot-grid,
   .also-inside ul { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   STEWARDSHIP — code blocks, contract grid, component cards
+   ============================================================ */
+
+/* inline code within body copy */
+.inline-code {
+  font-family: "SF Mono", "Fira Code", "Fira Mono", monospace;
+  font-size: 0.85em;
+  background: rgba(0, 0, 0, 0.07);
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: -0.01em;
+}
+
+.project-section--dark .inline-code {
+  background: rgba(255, 255, 255, 0.12);
+  color: #c9d6f5;
+}
+
+/* code in dataflow nodes */
+.df-code {
+  font-family: "SF Mono", "Fira Code", monospace;
+  font-size: 0.78em;
+  background: rgba(0, 0, 0, 0.08);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+.project-section--dark .df-code {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* fenced code blocks */
+.code-block {
+  background: #1a1f2e;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.code-block--light {
+  background: #f4f4f1;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.code-block-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 10px 18px;
+  background: rgba(0, 0, 0, 0.25);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.code-block--light .code-block-label {
+  background: rgba(0, 0, 0, 0.05);
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.code-block pre {
+  margin: 0;
+  padding: 20px 22px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.code-block code {
+  font-family: "SF Mono", "Fira Code", "Fira Mono", "Courier New", monospace;
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: #c9d6f5;
+  display: block;
+  white-space: pre;
+}
+
+.code-block--light code {
+  color: #2d3a4a;
+}
+
+/* two-column contract type grid */
+.contract-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.contract-type-header {
+  margin-bottom: 14px;
+}
+
+.contract-type-header h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 8px 0 4px;
+}
+
+.contract-type-header p {
+  font-size: 0.85rem;
+  opacity: 0.55;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* section-within-section tech blocks */
+.stewardship-tech-heading {
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+}
+
+.project-section--dark .stewardship-tech-heading {
+  color: #fff;
+}
+
+@media (max-width: 860px) {
+  .contract-grid { grid-template-columns: 1fr; }
+}
+
+.stewardship-design-decisions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.stewardship-decision {
+  padding: 24px 26px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stewardship-decision p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.75;
+  margin: 0;
+}
+
+.stewardship-components {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+  align-items: start;
+}
+
+.stewardship-component {
+  background: #fff;
+  border-radius: 20px;
+  padding: 32px 28px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stewardship-component:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.14);
+}
+
+.stewardship-component-header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.stewardship-role-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+}
+
+.stewardship-role-badge--producer  { background: #eaf0f8; color: #37557f; }
+.stewardship-role-badge--consumer  { background: #eef4ec; color: #3f6b3a; }
+.stewardship-role-badge--both      { background: #f9efe8; color: #b04f2d; }
+
+.stewardship-component-name {
+  font-size: 1.9rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin: 0;
+}
+
+.stewardship-component-type {
+  font-size: 0.82rem;
+  font-weight: 600;
+  opacity: 0.5;
+  margin: 4px 0 0;
+}
+
+.stewardship-component-body {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  opacity: 0.72;
+  flex: 1;
+}
+
+.stewardship-tools {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.stewardship-tools li {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  opacity: 0.78;
+  padding-left: 16px;
+  position: relative;
+}
+
+.stewardship-tools li::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  font-weight: 800;
+}
+
+.stewardship-longterm {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--green);
+}
+
+@media (max-width: 960px) {
+  .stewardship-design-decisions,
+  .stewardship-components {
+    grid-template-columns: 1fr;
+  }
 }

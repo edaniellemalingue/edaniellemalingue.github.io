@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LR1WG9SHX1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LR1WG9SHX1');
+  </script>
+
+  <meta charset="UTF-8" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stewardship · Connected App Suite · System Design Case Study · Eunice-Danielle Malingue</title>
+  <meta name="description" content="System design case study: Stewardship, a three-app suite where Godspeed, Provision, and Prosper share a typed data contract and Bearer-token auth to pass job, housing, and financial data automatically. By Eunice-Danielle Malingue, USC Iovine &amp; Young '26." />
+  <link rel="canonical" href="https://daniellemalingue.com/stewardship.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Eunice-Danielle Malingue" />
+  <meta property="og:url" content="https://daniellemalingue.com/stewardship.html" />
+  <meta property="og:title" content="Stewardship · Connected App Suite · System Design Case Study" />
+  <meta property="og:description" content="Three apps, one typed contract. A shared-secret Bearer token passes job, housing, and financial data across Godspeed, Provision, and Prosper server-side. By Eunice-Danielle Malingue." />
+  <meta property="og:image" content="https://daniellemalingue.com/images/godspeed/architecture.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Stewardship · Connected App Suite · System Design Case Study" />
+  <meta name="twitter:description" content="Three apps, one typed contract. A shared-secret Bearer token passes job, housing, and financial data across Godspeed, Provision, and Prosper server-side." />
+  <meta name="twitter:image" content="https://daniellemalingue.com/images/godspeed/architecture.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://daniellemalingue.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Stewardship", "item": "https://daniellemalingue.com/stewardship.html"}
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="style.css?v=110" />
+  <link rel="stylesheet" href="project.css?v=92" />
+</head>
+<body>
+
+  <div class="city-background">
+    <div class="grid-overlay"></div>
+    <div class="light light-1"></div>
+    <div class="light light-2"></div>
+    <div class="light light-3"></div>
+    <div class="skyline skyline-back"></div>
+    <div class="skyline skyline-front"></div>
+  </div>
+
+  <nav>
+    <a href="index.html" class="logo cursive-name">Eunice-Danielle Malingue</a>
+    <div>
+      <a href="index.html#work">Work</a>
+      <a href="about.html">About</a>
+      <a href="https://drive.google.com/file/d/1cE3ytdl_r3RcZOEmXyHLCXlK0U0dg6sn/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
+      <a href="https://www.linkedin.com/in/eunice-danielle-malingue-08765b270" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="project-hero">
+    <div class="project-hero-inner">
+      <div class="project-nav">
+        <a href="index.html" class="back-link">← Back to Work</a>
+      </div>
+      <div class="project-hero-text project-hero-text--full">
+        <p class="project-eyebrow">Connected Suite · System Design</p>
+        <h1 class="project-title">Stewardship</h1>
+        <p class="project-tagline">Three apps, one typed data contract, built so the hard parts of life manage themselves.</p>
+        <p class="section-body" style="margin-top: 8px; margin-bottom: 36px;">A shared Bearer-token contract lets three independent Next.js apps pass job, housing, and financial data across each other server-side, so your life stays in sync without you re-entering anything.</p>
+
+        <div class="project-meta-row">
+          <div class="project-meta-item">
+            <span class="meta-label">Role</span>
+            <span class="meta-value">Solo build · Product + Engineering</span>
+          </div>
+          <div class="project-meta-item">
+            <span class="meta-label">Stack</span>
+            <span class="meta-value">Next.js · Supabase · Firebase · Plaid · Vercel · Claude</span>
+          </div>
+          <div class="project-meta-item">
+            <span class="meta-label">Contract version</span>
+            <span class="meta-value">1.0 · 2026-06-23</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 1: THE PROBLEM -->
+  <section class="project-section project-section--tint">
+    <div class="project-container">
+      <div class="section-label">The Problem</div>
+      <h2 class="section-heading">Life's hardest transitions are treated as separate problems</h2>
+      <p class="section-body">Landing a job, moving to a new city, getting your finances in order: these don't happen in isolation, but every tool for them assumes they do. So you carry the coordination by hand. You copy your salary into a budgeting sheet. You look up what rent in a new city costs against that number. You manually flag which apartments are realistic given the offer. The tools stay separate. You do the glue work.</p>
+      <p class="section-body">The principle I built toward: <strong>done doesn't require you.</strong> A job signed in one app should ripple into the others automatically, with nothing in between except the contract.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 2: THE ARCHITECTURE -->
+  <section class="project-section project-section--dark">
+    <div class="project-container">
+      <div class="section-label">The Architecture</div>
+      <h2 class="section-heading">Contract-first, producer-consumer, one direction</h2>
+      <p class="section-body">I wrote the data contract before building any UI. Each app was spec'd as a producer, consumer, or both against that contract. The integration layer is HTTP, not a shared database — which means each app is fully independent and could be replaced without touching the others.</p>
+
+      <div class="dataflow" style="margin-top: 36px;">
+        <a class="dataflow-node" href="godspeed.html">
+          <span class="df-name">Godspeed</span>
+          <span class="df-role">Producer</span>
+          <span class="df-note">Exposes <code class="df-code">GET /api/external/jobs</code>. Returns typed <code class="df-code">Job[]</code> with salary, location, and status.</span>
+        </a>
+        <div class="dataflow-arrow">
+          <span class="df-label">salary · city · status</span>
+          <span class="df-line">→</span>
+        </div>
+        <a class="dataflow-node" href="provision.html">
+          <span class="df-name">Provision</span>
+          <span class="df-role">Reader + Producer</span>
+          <span class="df-note">Reads jobs, exposes <code class="df-code">GET /api/external/listings</code>. Returns typed <code class="df-code">Listing[]</code> with rent, deposit, and status.</span>
+        </a>
+        <div class="dataflow-arrow">
+          <span class="df-label">rent · deposit · status</span>
+          <span class="df-line">→</span>
+        </div>
+        <a class="dataflow-node" href="prosper.html">
+          <span class="df-name">Prosper</span>
+          <span class="df-role">Consumer</span>
+          <span class="df-note">Reads both feeds in parallel at request time. No outbound contract endpoint — it only receives.</span>
+        </a>
+      </div>
+
+      <figure class="deck-banner" style="margin-top: 48px;">
+        <img src="images/godspeed/architecture.png" alt="Architecture diagram: Godspeed jobs feed into Provision and directly into Prosper; Provision listings feed into Prosper. One shared secret, server-side only, read-only pulls." loading="lazy" />
+        <figcaption>One direction only. No sync engine, no shared database, no circular dependencies. The shortcut arrow (Godspeed straight to Prosper) lets salary projections appear in Prosper without going through Provision first.</figcaption>
+      </figure>
+
+      <!-- AUTH -->
+      <div class="stewardship-tech-block" style="margin-top: 56px;">
+        <div class="section-label">Authentication</div>
+        <h3 class="stewardship-tech-heading">One shared secret, validated server-side on every request</h3>
+        <p class="section-body">All three apps share a single <code class="inline-code">CROSS_APP_SECRET</code> environment variable. Every cross-app fetch puts it in the <code class="inline-code">Authorization</code> header as a Bearer token. Every producer validates it before returning any data. The check happens inside the Next.js route handler — the browser never sees the secret and it never touches the client bundle.</p>
+        <div class="code-block">
+          <div class="code-block-label">Godspeed · app/api/external/jobs/route.ts</div>
+          <pre><code>export async function GET(req: Request) {
+  const auth = req.headers.get('authorization');
+  const secret = process.env.CROSS_APP_SECRET;
+  if (!secret || auth !== `Bearer ${secret}`) {
+    return NextResponse.json({ error: 'unauthorized' }, { status: 401 });
+  }
+  // ... return jobs
+}</code></pre>
+        </div>
+        <div class="code-block" style="margin-top: 16px;">
+          <div class="code-block-label">Prosper · src/lib/external.ts — both fetches use the same helper</div>
+          <pre><code>async function getJSON&lt;T&gt;(url: string | undefined, key: string): Promise&lt;T[]&gt; {
+  const secret = process.env.CROSS_APP_SECRET;
+  if (!url || !secret) return [];
+  const res = await fetch(url, {
+    headers: { Authorization: `Bearer ${secret}` },
+    next: { revalidate: 300 },   // 5-min server-side cache
+  });
+  if (!res.ok) return [];
+  const data = await res.json();
+  return Array.isArray(data?.[key]) ? (data[key] as T[]) : [];
+}</code></pre>
+        </div>
+        <p class="section-body" style="margin-top: 20px;">The <code class="inline-code">next: { revalidate: 300 }</code> call means Prosper caches the cross-app responses for 5 minutes at the server layer — fast enough to feel instant, not so aggressive that a new job or listing is stale for long. Graceful degradation is also explicit: any network failure or bad status returns an empty array, so the Planning page degrades cleanly rather than throwing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: THE CONTRACT -->
+  <section class="project-section">
+    <div class="project-container">
+      <div class="section-label">The Contract</div>
+      <h2 class="section-heading">Typed interfaces, prefixed IDs, versioned and canonical</h2>
+      <p class="section-body">The contract lives as a <code class="inline-code">CONTRACT.md</code> in each repo — identical copies, intentionally. The canonical source is in Godspeed. Each object type uses a namespace prefix on its ID (<code class="inline-code">gs_</code> for jobs, <code class="inline-code">pv_</code> for listings) so Prosper can tell provenance at a glance with no ambiguity.</p>
+
+      <div class="contract-grid">
+        <div class="contract-type">
+          <div class="contract-type-header">
+            <span class="stewardship-role-badge stewardship-role-badge--producer">Godspeed produces</span>
+            <h3>Job</h3>
+            <p>Consumed by Provision (affordability) and Prosper (income projection)</p>
+          </div>
+          <div class="code-block code-block--light">
+            <pre><code>interface Job {
+  id: string;           // "gs_123" — gs_ prefix
+  company: string;
+  title: string;
+  city: string | null;
+  state: string | null;
+  remote: boolean;
+  salary_min: number | null;
+  salary_max: number | null;
+  salary_estimated?: boolean; // true when Godspeed
+                              // estimates salary vs. listed
+  status: "new" | "applied"
+        | "interviewing"
+        | "offer" | "rejected";
+  source: string | null;
+  url: string | null;
+  updated_at: string;   // ISO 8601
+}</code></pre>
+          </div>
+        </div>
+
+        <div class="contract-type">
+          <div class="contract-type-header">
+            <span class="stewardship-role-badge stewardship-role-badge--both">Provision produces</span>
+            <h3>Listing</h3>
+            <p>Consumed by Prosper (upcoming housing costs and cash-flow projection)</p>
+          </div>
+          <div class="code-block code-block--light">
+            <pre><code>interface Listing {
+  id: string;               // "pv_456" — pv_ prefix
+  name: string;
+  city: string;
+  state: string;
+  rent: number;
+  deposit: number | null;
+  app_fee: number | null;
+  beds: number | null;
+  baths: number | null;
+  sqft: number | null;
+  lease_term_months: number | null;
+  concessions: string | null;
+  status: "saved" | "toured"
+        | "applied" | "approved"
+        | "signed" | "rejected";
+  updated_at: string;       // ISO 8601
+}</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- AFFORDABILITY ALGORITHM -->
+      <div class="stewardship-tech-block" style="margin-top: 48px;">
+        <div class="section-label">The Affordability Algorithm</div>
+        <h3 class="stewardship-tech-heading">The 30% rule, automated</h3>
+        <p class="section-body">Provision's listings page fetches Godspeed jobs on load, then calls <code class="inline-code">pickPrimaryJob()</code> to select the most relevant one — offer status first, then interviewing, then most recently updated. That job's <code class="inline-code">salary_min</code> drives the affordability classification against each listing's rent.</p>
+        <div class="code-block code-block--light">
+          <div class="code-block-label">Provision · src/lib/external/jobs.ts</div>
+          <pre><code>export function classifyAffordability(
+  rent: number | null,
+  salaryMin: number | null,
+): "affordable" | "stretch" | null {
+  if (!rent || !salaryMin) return null;
+  const monthlyGross = salaryMin / 12;
+  return rent &lt;= monthlyGross * 0.3 ? "affordable" : "stretch";
+}</code></pre>
+        </div>
+        <p class="section-body" style="margin-top: 16px;">The result is a badge on every listing card — no manual calculation required. When no Godspeed data is available (user hasn't connected or Godspeed is unreachable), the function returns <code class="inline-code">null</code> and the badge is omitted rather than showing a wrong value.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: THREE COMPONENTS -->
+  <section class="project-section project-section--tint">
+    <div class="project-container">
+      <div class="section-label">The Components</div>
+      <h2 class="section-heading">Three apps, three roles, two scheduled jobs</h2>
+
+      <div class="stewardship-components">
+
+        <div class="stewardship-component">
+          <span class="stewardship-role-badge stewardship-role-badge--producer">Producer</span>
+          <h3 class="stewardship-component-name">Godspeed</h3>
+          <p class="stewardship-component-type">Job-Search Dashboard · Next.js + Supabase</p>
+          <ul class="stewardship-tools">
+            <li><strong>Clearance</strong> — AI cover letter generator tailored to each role from your profile</li>
+            <li><strong>Resume builder</strong> — experience bank plus targeted resume export to PDF</li>
+            <li><strong>People &amp; outreach</strong> — Hunter.io surfaces contacts at target companies</li>
+            <li><strong>Skills board</strong> — daily aptitude and product interview practice</li>
+            <li><strong>Live job + news cron</strong> — postings refresh at 1pm UTC, company news at 9pm UTC</li>
+          </ul>
+          <p class="stewardship-longterm">The longer you use it, the richer your experience bank gets — making every future resume and cover letter faster and more targeted than the last.</p>
+          <a class="project-cta project-cta--secondary" href="godspeed.html" style="margin-top: 24px; display: inline-flex;">Full case study →</a>
+        </div>
+
+        <div class="stewardship-component">
+          <span class="stewardship-role-badge stewardship-role-badge--both">Reader + Producer</span>
+          <h3 class="stewardship-component-name">Provision</h3>
+          <p class="stewardship-component-type">Moving Command Center · Next.js + Firebase</p>
+          <ul class="stewardship-tools">
+            <li><strong>Listings pipeline</strong> — tracks each apartment from saved through signed with rent, deposit, and lease terms</li>
+            <li><strong>AI checklists</strong> — phased moving checklist generated and tailored to your specific move</li>
+            <li><strong>Roommate scorer</strong> — weighted criteria plus an AI fit assessment per candidate</li>
+            <li><strong>Affordability badge</strong> — reads Godspeed salary and flags every listing as affordable or a stretch via the 30% rule</li>
+          </ul>
+          <p class="stewardship-longterm">A move normally lives across browser tabs and a dying spreadsheet. Provision makes it one organized place you can hand off to your future self the next time you move.</p>
+          <a class="project-cta project-cta--secondary" href="provision.html" style="margin-top: 24px; display: inline-flex;">Full case study →</a>
+        </div>
+
+        <div class="stewardship-component">
+          <span class="stewardship-role-badge stewardship-role-badge--consumer">Consumer</span>
+          <h3 class="stewardship-component-name">Prosper</h3>
+          <p class="stewardship-component-type">Personal Finance Dashboard · Next.js + Supabase + Plaid</p>
+          <ul class="stewardship-tools">
+            <li><strong>Plaid sync</strong> — real bank, card, and loan balances refreshed daily at 9am UTC with no action required</li>
+            <li><strong>Sparks</strong> — AI money tutor that answers using your actual balances, not generic advice</li>
+            <li><strong>Debt payoff planner</strong> — avalanche vs. snowball side by side with an exact debt-free date</li>
+            <li><strong>Planning view</strong> — runs salary from Godspeed and rent from Provision against your real accounts in one projection</li>
+          </ul>
+          <p class="stewardship-longterm">Your full financial picture updates automatically every day. Over time Sparks builds a learning history tied to your real numbers, so advice gets more relevant the longer you use it.</p>
+          <a class="project-cta project-cta--secondary" href="prosper.html" style="margin-top: 24px; display: inline-flex;">Full case study →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: DECISIONS AND TRADEOFFS -->
+  <section class="project-section project-section--dark">
+    <div class="project-container">
+      <div class="section-label">Decisions and Tradeoffs</div>
+      <h2 class="section-heading">What I chose and why</h2>
+
+      <div class="stewardship-design-decisions">
+        <div class="stewardship-decision">
+          <span class="section-label" style="margin-bottom: 8px; display:block;">HTTP, not a shared database</span>
+          <p>Each app has its own database. Integration happens at the API layer, not the data layer. This means each app is independently deployable and the integration contract is explicit and versioned rather than implicit table access. The tradeoff is latency on cross-app reads — which is why Prosper adds a 5-minute server cache.</p>
+        </div>
+        <div class="stewardship-decision">
+          <span class="section-label" style="margin-bottom: 8px; display:block;">One direction, no write-back</span>
+          <p>Consumers only read. No app can write to another app's data. This prevents the class of bugs where a downstream app corrupts an upstream source of truth. The cost is that there's no real-time push — consumers pull when they need data, not when producers update.</p>
+        </div>
+        <div class="stewardship-decision">
+          <span class="section-label" style="margin-bottom: 8px; display:block;">Graceful degradation over hard failure</span>
+          <p>Every cross-app fetch returns an empty array on any error — network failure, wrong status, missing env var. Pages that consume cross-app data are built to render without it. A recruiter using Prosper's Planning page never sees a broken state just because Godspeed is unreachable.</p>
+        </div>
+      </div>
+
+      <div class="stewardship-tech-block" style="margin-top: 48px;">
+        <div class="section-label">Known gap</div>
+        <h3 class="stewardship-tech-heading">One type mismatch between consumers</h3>
+        <p class="section-body">Prosper's <code class="inline-code">Job</code> interface includes <code class="inline-code">salary_estimated?: boolean</code> as an optional field. Provision's <code class="inline-code">ContractJob</code> interface doesn't define it — so Provision silently ignores the field even though Godspeed sends it. This doesn't break anything (Provision doesn't use that field), but it's a contract drift that a stricter shared-types package would prevent. In a team environment I'd extract the interfaces into a published internal package both consumers import from, so a producer changing its schema breaks the consumer's build before it breaks production.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: WHAT THIS DEMONSTRATES -->
+  <section class="project-section">
+    <div class="project-container">
+      <div class="section-label">What This Demonstrates</div>
+      <h2 class="section-heading" style="max-width: 820px;">I don't build screens. I build systems that talk to each other.</h2>
+
+      <p class="section-body" style="margin-top: 24px; max-width: 820px;">The three apps are in real use. Two Vercel cron jobs keep Godspeed's data fresh on a schedule. A third keeps Prosper's Plaid balances current. Cross-app data moves at request time with a 5-minute cache. Manual re-entry is gone — a job change in Godspeed changes what's affordable in Provision and what the income projection shows in Prosper, automatically.</p>
+
+      <div class="stat-row" style="margin-top: 48px;">
+        <div class="stat">
+          <span class="stat-num">2</span>
+          <span class="stat-label">Typed contract endpoints<br><small style="font-size:0.7rem; font-weight:600; opacity:0.6;">/api/external/jobs · /api/external/listings</small></span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">3</span>
+          <span class="stat-label">Vercel cron jobs across the suite<br><small style="font-size:0.7rem; font-weight:600; opacity:0.6;">jobs 1pm UTC · news 9pm UTC · Plaid 9am UTC</small></span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">0</span>
+          <span class="stat-label">Shared databases<br><small style="font-size:0.7rem; font-weight:600; opacity:0.6;">Integration is at the API layer, not the data layer</small></span>
+        </div>
+      </div>
+
+      <div class="project-cta-row" style="margin-top: 56px;">
+        <a class="project-cta project-cta--primary" href="godspeed.html">Godspeed →</a>
+        <a class="project-cta project-cta--secondary" href="provision.html">Provision →</a>
+        <a class="project-cta project-cta--secondary" href="prosper.html">Prosper →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <p>Open to product design, creative technology, strategy, and innovation opportunities.</p>
+    <a href="mailto:e.daniellemalingue@gmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/eunice-danielle-malingue-08765b270" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="https://drive.google.com/file/d/1cE3ytdl_r3RcZOEmXyHLCXlK0U0dg6sn/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
+  </footer>
+
+  <script src="script.js?v=108"></script>
+</body>
+</html>

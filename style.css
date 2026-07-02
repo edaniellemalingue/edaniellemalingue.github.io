@@ -287,6 +287,13 @@
     display: block;
   }
 
+  .hero-photo--circle {
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    width: min(420px, 42vw);
+    object-position: 55% 20%;
+  }
+
   @media (max-width: 899px) {
     .hero-photo {
       width: min(420px, 92vw);
@@ -1642,9 +1649,25 @@
   .tile.cover-text:hover { transform: scale(1.025); }
 
   /* one accent per app, drawn from the site palette */
-  .tile.cover-text--prosper   { background: #eef4ec; color: #3f6b3a; }
-  .tile.cover-text--godspeed  { background: #eaf0f8; color: #37557f; }
-  .tile.cover-text--provision { background: #f9efe8; color: #b04f2d; }
+  .tile.cover-text--prosper      { background: #eef4ec; color: #3f6b3a; }
+  .tile.cover-text--godspeed     { background: #eaf0f8; color: #37557f; }
+  .tile.cover-text--provision    { background: #f9efe8; color: #b04f2d; }
+  /* system overview tile — full width, single row height */
+  .tile.cover-text--stewardship  { background: #1f2a38; color: #dde5ef; }
+  .tile.cover-text--stewardship .ct-badge { background: rgba(255,255,255,0.12); }
+  .tile.tile--suite-banner {
+    grid-column: 1 / -1;
+    grid-row: span 1;
+  }
+
+  /* ── SUITE — Stewardship banner + 3 child tiles share a dark border ── */
+  .tile--suite-banner {
+    border: 2px solid #1f2a38;
+  }
+
+  .tile.suite-child {
+    border: 2px solid #1f2a38;
+  }
 
 /* handwritten "coded with love" note in the hero */
 .home-hero p.handwritten-note {
