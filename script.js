@@ -2,8 +2,8 @@ const typedStatement = document.getElementById("typedStatement");
 
 if (typedStatement) {
   // Type the prefix once, then cycle the final word: solutions → products → experiences
-  const prefix = "People deserve software that understands their full ";
-  const words = ["picture.", "situation.", "story."];
+  const prefix = "I blend design, technology, and business to create human-centered ";
+  const words = ["solutions.", "products.", "experiences."];
   const colors = ["#7f9c78", "#c15f3c", "#4a6fa5"]; // one color per word
 
   let prefixIndex = 0;   // how much of the prefix is typed

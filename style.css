@@ -304,6 +304,7 @@
     font-size: 0.92rem;
     font-weight: 500;
     color: rgba(38, 38, 38, 0.62);
+    text-align: center;
   }
 
   .home-hero p:last-child,
