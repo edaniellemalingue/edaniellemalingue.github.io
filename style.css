@@ -278,7 +278,7 @@
   }
 
   .hero-photo {
-    width: min(480px, 45vw);
+    width: min(560px, 50vw);
     aspect-ratio: 4 / 3.5;
     object-fit: cover;
     object-position: center top;
@@ -289,7 +289,7 @@
 
   @media (max-width: 899px) {
     .hero-photo {
-      width: min(360px, 88vw);
+      width: min(420px, 92vw);
     }
   }
   

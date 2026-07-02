@@ -28,7 +28,7 @@ if (typedStatement) {
     if (prefixIndex < prefix.length) {
       prefixIndex++;
       typedStatement.innerHTML = withGradient(prefix.slice(0, prefixIndex));
-      setTimeout(typeHeroStatement, 72);
+      setTimeout(typeHeroStatement, 30);
       return;
     }
 
@@ -42,7 +42,7 @@ if (typedStatement) {
         deleting = true;
         setTimeout(typeHeroStatement, 1500); // hold on the full word
       } else {
-        setTimeout(typeHeroStatement, 70);
+        setTimeout(typeHeroStatement, 30);
       }
     } else {
       charIndex--;
@@ -50,9 +50,9 @@ if (typedStatement) {
       if (charIndex === 0) {
         deleting = false;
         wordIndex = (wordIndex + 1) % words.length;
-        setTimeout(typeHeroStatement, 250); // brief pause before next word
+        setTimeout(typeHeroStatement, 200); // brief pause before next word
       } else {
-        setTimeout(typeHeroStatement, 40);
+        setTimeout(typeHeroStatement, 20);
       }
     }
   }
