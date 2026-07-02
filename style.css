@@ -1628,7 +1628,7 @@
   .tile.cover-text--godspeed     { background: #eaf0f8; color: #37557f; }
   .tile.cover-text--provision    { background: #f9efe8; color: #b04f2d; }
   /* system overview tile — full width, single row height */
-  .tile.cover-text--stewardship  { background: #1f2a38; color: #dde5ef; }
+  .tile.cover-text--stewardship  { background: #4a5240; color: #e8ede4; }
   .tile.cover-text--stewardship .ct-badge { background: rgba(255,255,255,0.12); }
 
 /* handwritten "coded with love" note in the hero */
